@@ -1,5 +1,6 @@
 #include <cstdio>
-#include <math.h>
+#include <cmath>
 #include <vector>
+#include <cstdio>
 
 using namespace std;
