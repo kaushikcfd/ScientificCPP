@@ -14,6 +14,9 @@
 
 #include <vector>
 #include <cstdio>
+#ifndef _SCIENTIFICCPP_H
+#define _SCIENTIFICCPP_H
+#endif
 
 using namespace std;
 
@@ -24,5 +27,8 @@ void zeroes(vector<double> & GivenVector)
 		GivenVector[CurrentElement] = 0.0;
 	printf("Success, VECTOR of size %d created with zeroes.\n",VectorLength);	
 }
+
+
+
 
 /**END OF THE FILE.**/

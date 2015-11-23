@@ -2,8 +2,9 @@
 #include <cmath>
 #include <vector>
 #include <cstdio>
-#include "Essentials/zeroes.cpp"
+#include "Essentials/zero.cpp"
 
 using namespace std;
 
-void zeroes(vector<double> & GivenVector);
+
+void zeroes(vector<double> & );
