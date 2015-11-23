@@ -15,9 +15,11 @@
 #include <vector>
 #include <cstdio>
 
+using namespace std;
+
 void zeroes(vector<double> & GivenVector)
 {
-	int CurrentElement,VectorLength=GivenVector.length();
+	int CurrentElement,VectorLength=GivenVector.size();
 	for(CurrentElement = 0; CurrentElement < VectorLength; CurrentElement++)
 		GivenVector[CurrentElement] = 0.0;
 	printf("Success, VECTOR of size %d created with zeroes.\n",VectorLength);	
