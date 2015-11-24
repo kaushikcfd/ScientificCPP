@@ -6,6 +6,6 @@ int main()
 	ones(a);
 	display(a);
 	b=a*5.0;
-	display(a);
+	display(10.0*a);
 	//display((1.0*a).begin());
 }
