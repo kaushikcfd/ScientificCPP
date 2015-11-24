@@ -27,10 +27,29 @@ vector<double> operator*(vector<double>& GivenVector, const double Factor)
 	vector<double> Result(GivenVector.begin(),GivenVector.end());
 	for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
 	 	Result[CurrentElement] = GivenVector[CurrentElement] * Factor;
+	printf("Success!! The matrix was multiplied by a factor\n");
 	return Result;  
 } 
 
 vector<double> operator*(const double Factor, vector<double>& GivenVector)
 {
 	return (GivenVector * Factor);
+}
+
+vector<double> operator+(vector<double>& LeftVector, vector <double> RightVector)
+{
+	unsigned VectorSize=LeftVector.size();
+	if(RightVector.size()==VectorSize)
+	{
+		vector<double> Result(LeftVector.begin(),LeftVector.end());
+		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
+	 		Result[CurrentElement] += RightVector[CurrentElement] ;
+		printf("Success the given matrices have been added!\n");
+		return Result;	
+	}
+	else
+	{
+		printf("ERROR: The arrays sent in for addition are of different sizes.\n");
+		return LeftVector;
+	}
 }
