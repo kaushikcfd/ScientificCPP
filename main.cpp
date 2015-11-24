@@ -7,5 +7,5 @@ int main()
 	display(a);
 	b=a*5.0;
 	//display(10.0*a);
-	display(a+b);
+	display(b*(10*a));
 }

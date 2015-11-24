@@ -1,7 +1,9 @@
 /**
  * This file will contain the basic functions that define the operator overloading functions on vectors.
  * Defined multiplication on it.
- *
+ * Defined addition operation of two vectors of same size.
+ * Defined subtraction operation of two vectors of same size.
+ * Defined dot product of two vectors of same size, but the syntax is same as for a factor multiplying, the program itself identifies what input it has been given and then applies the formula to it.
  * FUNCTIONS USED:
  * const vector<T>& operator*(vector<T>& GivenVector, const U Factor): This function basically multiplies the entire entries in the array by a factor of Factor.
  * const vector<T>& operator*(const U Factor, vector<T>& GivenVector): This also does the work of the above mentioned function, just the change is we have to make the multiplicative property associative, and there is no other to do it rather than defining an operator overloading function.
@@ -50,6 +52,42 @@ vector<double> operator+(vector<double>& LeftVector, vector <double> RightVector
 	else
 	{
 		printf("ERROR: The arrays sent in for addition are of different sizes.\n");
+		return LeftVector;
+	}
+}
+
+vector<double> operator-(vector<double>& LeftVector, vector <double> RightVector)
+{
+	unsigned VectorSize=LeftVector.size();
+	if(RightVector.size()==VectorSize)
+	{
+		vector<double> Result(LeftVector.begin(),LeftVector.end());
+		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
+	 		Result[CurrentElement] -= RightVector[CurrentElement] ;
+		printf("Success the given matrices have been subtracted!\n");
+		return Result;	
+	}
+	else
+	{
+		printf("ERROR: The arrays sent in for subtraction are of different sizes.\n");
+		return LeftVector;
+	}
+}
+
+vector<double> operator*(vector<double>& LeftVector, vector <double> RightVector)
+{
+	unsigned VectorSize=LeftVector.size();
+	if(RightVector.size()==VectorSize)
+	{
+		vector<double> Result(LeftVector.begin(),LeftVector.end());
+		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
+	 		Result[CurrentElement] =LeftVector[CurrentElement]* RightVector[CurrentElement] ;
+		printf("Success!! The dot product of the given matrices has been evaluated.\n");
+		return Result;	
+	}
+	else
+	{
+		printf("ERROR: The arrays sent in for dot product are of different sizes.\n");
 		return LeftVector;
 	}
 }
