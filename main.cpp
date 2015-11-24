@@ -2,7 +2,10 @@
 
 int main()
 {
-	vector<double> a(200);
-	ones(a); 
-	display(a*5.0);
+	vector<double> a(200),b(200);
+	ones(a);
+	display(a);
+	b=a*5.0;
+	display(a);
+	//display((1.0*a).begin());
 }

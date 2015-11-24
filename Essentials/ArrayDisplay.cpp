@@ -18,7 +18,7 @@
 
 using namespace std;
 
-void display(const vector<double> & GivenVector)
+void display(vector<double> & GivenVector)
 {
 	int CurrentElement, VectorLength = GivenVector.size();
 	for(CurrentElement=0; CurrentElement< VectorLength; CurrentElement++)

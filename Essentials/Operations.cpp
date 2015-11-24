@@ -13,6 +13,7 @@
  * **/
 
 #include <vector>
+#include <cstdio>
 #ifndef _SCIENTIFICCPP_H
 #define _SCIENTIFICCPP_H
 #endif
@@ -20,16 +21,16 @@
 
 using namespace std;
 
-template<class T, class U>
-const vector<T>& operator*(vector<T>& GivenVector, const U Factor)
+vector<double> operator*(vector<double>& GivenVector, const double Factor)
 {
-	for (unsigned CurrentElement = 0; CurrentElement < GivenVector.size(); CurrentElement++)
-		GivenVector[CurrentElement] *= Factor; 
-	return GivenVector;  
+	int VectorSize = GivenVector.size();
+	vector<double> Result(GivenVector.begin(),GivenVector.end());
+	for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
+	 	Result[CurrentElement] = GivenVector[CurrentElement] * Factor;
+	return Result;  
 } 
 
-template<class T, class U>
-const vector<T>& operator*(const U Factor, vector<T>& GivenVector)
+vector<double> operator*(const double Factor, vector<double>& GivenVector)
 {
 	return (GivenVector * Factor);
 }
