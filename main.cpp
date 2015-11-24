@@ -3,6 +3,6 @@
 int main()
 {
 	vector<double> a(200);
-	ones(a);
-	display(a);
+	ones(a); 
+	display(a*5.0);
 }

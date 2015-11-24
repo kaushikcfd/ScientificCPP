@@ -11,10 +11,14 @@
 
 #include <vector>
 #include <cstdio>
+#ifndef _SCIENTIFICCPP_H
+#define _SCIENTIFICCPP_H
+#endif
+
 
 using namespace std;
 
-void display(vector<double> & GivenVector)
+void display(const vector<double> & GivenVector)
 {
 	int CurrentElement, VectorLength = GivenVector.size();
 	for(CurrentElement=0; CurrentElement< VectorLength; CurrentElement++)

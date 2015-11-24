@@ -13,7 +13,6 @@ using namespace std;
 void zeroes(vector<double> & );
 void ones(vector<double> & );
 void display(vector<double> & );
-template<class T, class U>
-const vector<T>& operator*(vector<T>& , const U);
-template<class T, class U>
-const vector<T>& operator*(const U, vector<T>& );
+const vector<double> operator*(const vector<double>, const double );
+const vector<double> operator*(const double , const vector<double>);
+
