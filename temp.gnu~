@@ -1,0 +1,25 @@
+total 220
+drwxrwxr-x 2 kaushikkulkarni kaushikkulkarni  4096 Dec  1 00:33 Essentials
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni 18047 Nov  7 18:38 LICENSE
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni     0 Dec  1 00:35 load
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni   272 Dec  1 00:35 main.cpp
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni 54320 Dec  1 00:35 main.o
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni   104 Nov 23 07:37 Makefile
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni 76392 Dec  1 00:31 output.jpg
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni  1304 Nov 23 16:46 README.md
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni   521 Dec  1 00:14 ScientificCPP.h
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni   466 Nov 24 16:47 ScientificCPP.h~
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni  9191 Dec  1 00:35 temp.dat
+-rw-rw-r-- 1 kaushikkulkarni kaushikkulkarni     0 Dec  1 00:35 temp.gnu
+-rwxrwxr-x 1 kaushikkulkarni kaushikkulkarni 30303 Dec  1 00:35 test
+reset
+set terminal jpeg interlace enhanced size 1366,768
+set output "output.jpg"
+set key right box
+set grid
+set title 'SimplePlot'
+set xrange[0.000000:4.990000]
+set yrange[-1.049997:1.050000]
+set ylabel 'Y'
+set xlabel 'X'
+plot 'temp.dat' title 'SineCurve' w lines ls 1

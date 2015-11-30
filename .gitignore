@@ -1,2 +1,6 @@
 /test.cpp
 /a.out
+*.gnu
+*.dat
+*.jpg
+
