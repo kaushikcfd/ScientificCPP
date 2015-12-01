@@ -20,7 +20,7 @@
 
 using namespace std;
 
-void zeroes(vector<double> & GivenVector)
+void zeros(vector<double> & GivenVector)
 {
 	int CurrentElement,VectorLength=GivenVector.size();
 	for(CurrentElement = 0; CurrentElement < VectorLength; CurrentElement++)

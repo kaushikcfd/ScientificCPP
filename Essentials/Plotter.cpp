@@ -26,9 +26,9 @@ using namespace std;
 
 void plot(vector<double> & LeftVector, vector<double> & RightVector,string GraphTitle="", string LegendTitle="")
 {
-	freopen("temp.dat","w",stdout);
 	if(RightVector.size()==LeftVector.size())
 	{
+		freopen("temp.dat","w",stdout);
 		printf("# X\tY\n");
 		int CurrentElement,VectorLength=LeftVector.size();
 		double xmax=LeftVector[0],xmin=LeftVector[0],ymax=RightVector[0],ymin=RightVector[0];
