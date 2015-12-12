@@ -3,14 +3,10 @@
 int main()
 {
 	vector<double> b(4,0),x(4,0);
-	vector<vector<double> > A(4);
-	A[0].resize(4);
-	A[1].resize(4);
-	A[2].resize(4);
-	A[3].resize(4);
+	vector<vector<double> > A;
+	zeros(A,4,4);
 	
 	A[0][0] = 5;
-	
 	A[0][1] = 7;
 	A[0][2] = 6;
 	A[0][3] = 5;

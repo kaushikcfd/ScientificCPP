@@ -15,6 +15,8 @@ using namespace std;
 
 
 void zeros(vector<double> & );
+void zeros(vector<double> &, unsigned int);
+void zeros(vector<double> &, unsigned int , unsigned int);
 void ones(vector<double> & );
 void display(vector<double>  );
 void plot(vector<double>& ,vector<double>&);
