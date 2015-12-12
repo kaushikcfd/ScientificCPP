@@ -8,6 +8,7 @@
 #include "Essentials/Operations.cpp"
 #include "Essentials/Plotter.cpp"
 #include "Essentials/StepFill.cpp"
+#include "MatrixOperations/GaussElimination.cpp"
 
 
 using namespace std;
@@ -18,6 +19,7 @@ void ones(vector<double> & );
 void display(vector<double>  );
 void plot(vector<double>& ,vector<double>&);
 void stepFill(vector<double>& , double , double, double );
+vector<double> GaussElimination(vector<vector<double> > , vector<double> );
 vector<double> operator*(vector<double>& , const double);
 vector<double> operator*(const double, vector<double>& );
 
