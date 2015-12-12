@@ -2,32 +2,12 @@
 
 int main()
 {
-	vector<double> b(4,0),x(4,0);
-	vector<vector<double> > A;
-	zeros(A,4,4);
-	
-	A[0][0] = 5;
-	A[0][1] = 7;
-	A[0][2] = 6;
-	A[0][3] = 5;
-	A[1][0] = 7;
-	A[1][1] =10;
-	A[1][2] = 8;
-	A[1][3] = 7;
-	A[2][0] = 6;
-	A[2][1] = 8;
-	A[2][2] =10;
-	A[2][3] = 9;
-	A[3][0] = 5;
-	A[3][1] = 7;
-	A[3][2] = 9;
-	A[3][3] =10;
+	vector<double> b(3,0),x;
 		
-	b[0] =  1;
-	b[1] = -1;
-	b[2] = -1;
-	b[3] =  1;
+	b[0] = 0;
+	b[1] = 7;
+	b[2] = 16;
 
-	x=GaussElimination(A, b);
+	x=equiInterpolation(-1,1,3, b);
 	display(x);
 }

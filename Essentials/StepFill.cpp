@@ -27,9 +27,9 @@ void stepFill(vector<double> & GivenVector, double start, double stepSize, doubl
 		int CurrentElement;
 		GivenVector.clear();
 		GivenVector.push_back(start);
-		for(CurrentElement = 0; GivenVector[CurrentElement] < end; CurrentElement++)
+		for(CurrentElement = 0; GivenVector[CurrentElement] <= end; CurrentElement++)
 		{
-			if((GivenVector[CurrentElement]+stepSize)<end)
+			if((GivenVector[CurrentElement]+stepSize)<=end)
 				GivenVector.push_back(GivenVector[CurrentElement]+stepSize);
 			else
 				break;
