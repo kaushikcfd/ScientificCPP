@@ -17,35 +17,15 @@
 
 #include <vector>
 #include <cstdio>
-#ifndef _SCIENTIFICCPP_H
-#define _SCIENTIFICCPP_H
+#ifndef Zero_H
+#define Zero_H
 #endif
 
 using namespace std;
 
-void zeros(vector<double> & GivenVector)
-{
-	int CurrentElement,VectorLength=GivenVector.size();
-	for(CurrentElement = 0; CurrentElement < VectorLength; CurrentElement++)
-		GivenVector[CurrentElement] = 0.0;
-	printf("Success, VECTOR of size %d created with zeroes.\n",VectorLength);	
-}
+vector<double> zeros( unsigned int );
 
-void zeros(vector<double> & GivenVector, unsigned int n)
-{
-	GivenVector.resize(n);
-	printf("Success, VECTOR of size %d created with zeroes.\n",n);	
-}
-
-void zeros(vector< vector<double> > & GivenVector, unsigned int m, unsigned int n)
-{
-	int CurrentElement;
-	GivenVector.resize(m);
-	for(CurrentElement = 0; CurrentElement < m; CurrentElement++)
-		GivenVector[CurrentElement].resize(n);
-	printf("Success, MATRIX of size %d x %d  created with zeroes.\n",m,n);	
-}
-
+vector< vector<double> > zeros(unsigned int m, unsigned int n);
 
 
 /**END OF THE FILE.**/

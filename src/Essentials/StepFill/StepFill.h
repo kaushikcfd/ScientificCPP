@@ -14,27 +14,12 @@
 
 #include <vector>
 #include <cstdio>
-#ifndef _SCIENTIFICCPP_H
-#define _SCIENTIFICCPP_H
+#ifndef StepFill_H
+#define StepFill_H
 #endif
 
 using namespace std;
 
-void stepFill(vector<double> & GivenVector, double start, double stepSize, double end)
-{
-	if(((end-start)*stepSize) > 0)
-	{
-		int CurrentElement;
-		GivenVector.clear();
-		GivenVector.push_back(start);
-		for(CurrentElement = 0; GivenVector[CurrentElement] < end; CurrentElement++)
-		{
-			if((GivenVector[CurrentElement]+stepSize)<end)
-				GivenVector.push_back(GivenVector[CurrentElement]+stepSize);
-		}
-		printf("Success, VECTOR of size %ld created with stepSize %.6f.\n",GivenVector.size(),stepSize);	
-	}
-	else
-		printf("Please check the given conditions the array will turn into an unending data structure!!!\n");
-}
+vector<double> stepFill(double start, double stepSize, double end);
+	
 /**END OF THE FILE.**/

@@ -1,6 +1,7 @@
 /**
- * This zeroes.h would generate the ones array for the initialization.
- * This should take in an argument for an vector and make all the elements in it one.
+ * This plot.cpp would be responsible for the plotting feature .
+ * This should take in  argument for two vectors i.e. one variable for 'X' and the other variable for 'Y'.
+ * This should also check whether the given vectors are of the same size.
  * */
 /**
  * VARIABLES USED:
@@ -14,19 +15,16 @@
 
 #include <vector>
 #include <cstdio>
-#ifndef _SCIENTIFICCPP_H
-#define _SCIENTIFICCPP_H
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#ifndef Plotter_H
+#define Plotter_H
 #endif
 
 using namespace std;
 
-void ones(vector<double> & GivenVector)
-{
-	int CurrentElement,VectorLength=GivenVector.size();
-	for(CurrentElement = 0; CurrentElement < VectorLength; CurrentElement++)
-		GivenVector[CurrentElement] = 1.0;
-	printf("Success, VECTOR of size %d created with ones.\n",VectorLength);	
-}
+void plot(vector<double> & , vector<double> & ,string , string );
 
 
 

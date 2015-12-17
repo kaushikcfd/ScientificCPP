@@ -2,27 +2,13 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include "Essentials/Zero.cpp"
-#include "Essentials/One.cpp"
-#include "Essentials/ArrayDisplay.cpp"
-#include "Essentials/Operations.cpp"
-#include "Essentials/Plotter.cpp"
-#include "Essentials/StepFill.cpp"
-#include "MatrixOperations/GaussElimination.cpp"
-#include "Interpolation/Equispaced.cpp"
+#include "src/Essentials/Zero/Zero.cpp"
+#include "src/Essentials/One/One.cpp"
+#include "src/Essentials/ArrayDisplay/ArrayDisplay.cpp"
+#include "src/Essentials/Operations/Operations.cpp"
+#include "src/Essentials/Plotter/Plotter.cpp"
+#include "src/Essentials/StepFill/StepFill.cpp"
+#include "src/MatrixOperations/GaussElimination/GaussElimination.cpp"
+#include "src/Interpolation/Equispaced/Equispaced.cpp"
 
-using namespace std;
-
-
-void zeros(vector<double> & );
-void zeros(vector<double> &, unsigned int);
-void zeros(vector<double> &, unsigned int , unsigned int);
-void ones(vector<double> & );
-void display(vector<double>  );
-void plot(vector<double>& ,vector<double>&, string , string );
-void stepFill(vector<double>& , double , double, double );
-vector<double> GaussElimination(vector<vector<double> > , vector<double> );
-vector<double> equiInterpolation(double, double , unsigned int , const vector<double> & );
-vector<double> operator*(vector<double>& , const double);
-vector<double> operator*(const double, vector<double>& );
 
