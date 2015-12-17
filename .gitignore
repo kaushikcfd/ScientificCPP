@@ -1,6 +1,8 @@
-/test.cpp
+/test
 /a.out
 *.gnu
 *.dat
 *.jpg
 *~
+load
+*.o
