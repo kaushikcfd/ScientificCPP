@@ -23,12 +23,12 @@
 
 using namespace std;
 
-vector<double> operator*(vector<double>& GivenVector, const double Factor);
+vector<double> operator*(vector<double> GivenVector, const double Factor);
 
-vector<double> operator*(const double Factor, vector<double>& GivenVector);
+vector<double> operator*(const double Factor, vector<double> GivenVector);
 
-vector<double> operator+(vector<double>& LeftVector, vector <double> RightVector);
+vector<double> operator+(vector<double> LeftVector, vector <double> RightVector);
 
-vector<double> operator-(vector<double>& LeftVector, vector <double> RightVector);
+vector<double> operator-(vector<double> LeftVector, vector <double> RightVector);
 
-vector<double> operator*(vector<double>& LeftVector, vector <double> RightVector);
+vector<double> operator*(vector<double> LeftVector, vector <double> RightVector);

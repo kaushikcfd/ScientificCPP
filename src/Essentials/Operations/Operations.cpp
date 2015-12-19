@@ -1,6 +1,6 @@
 #include "Operations.h"
 
-vector<double> operator*(vector<double>& GivenVector, const double Factor)
+vector<double> operator*(vector<double> GivenVector, const double Factor)
 {
 	int VectorSize = GivenVector.size();
 	vector<double> Result(GivenVector.begin(),GivenVector.end());
@@ -10,12 +10,14 @@ vector<double> operator*(vector<double>& GivenVector, const double Factor)
 	return Result;  
 } 
 
-vector<double> operator*(const double Factor, vector<double>& GivenVector)
+vector<double> operator*(const double Factor, vector<double> GivenVector)
 {
-	return (GivenVector * Factor);
+	vector<double> Result;
+	Result = GivenVector*Factor;
+	return Result;
 }
 
-vector<double> operator+(vector<double>& LeftVector, vector <double> RightVector)
+vector<double> operator+(vector<double> LeftVector, vector <double> RightVector)
 {
 	unsigned VectorSize=LeftVector.size();
 	if(RightVector.size()==VectorSize)
@@ -33,7 +35,7 @@ vector<double> operator+(vector<double>& LeftVector, vector <double> RightVector
 	}
 }
 
-vector<double> operator-(vector<double>& LeftVector, vector <double> RightVector)
+vector<double> operator-(vector<double> LeftVector, vector <double> RightVector)
 {
 	unsigned VectorSize=LeftVector.size();
 	if(RightVector.size()==VectorSize)
@@ -51,7 +53,7 @@ vector<double> operator-(vector<double>& LeftVector, vector <double> RightVector
 	}
 }
 
-vector<double> operator*(vector<double>& LeftVector, vector <double> RightVector)
+vector<double> operator*(vector<double> LeftVector, vector <double> RightVector)
 {
 	unsigned VectorSize=LeftVector.size();
 	if(RightVector.size()==VectorSize)

@@ -2,10 +2,7 @@
 
 int main()
 {
-	vector<double> x,y;
-	x = stepFill(-1,0.01,1);
-	for(int i=0;i<x.size();i++)
-		y.push_back(sin(x[i]));
+	vector<double> x ;
+	x = legendrePoly(4);
 	display(x);
-	plot(x,y);
 }
