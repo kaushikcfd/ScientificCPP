@@ -11,6 +11,8 @@
 #include "../MatrixOperations/GaussElimination/GaussElimination.cpp"
 #include "../Interpolation/Equispaced/Equispaced.cpp"
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
+#include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
+#include "../Polynomial/PolyEval/PolyEval.cpp"
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
 #endif
