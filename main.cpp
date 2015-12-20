@@ -15,6 +15,9 @@ int main()
 	printf("%.6f\n",y);
 	y = deriv(2.5);
 	printf("%.6f\n",y);
+	printf("Now trying with root-finding************\n\n\n\n\n");
+	y = newtonRaphson(eval,44);
+	printf("%.6f\n",y);
 	return 0;
 
 }

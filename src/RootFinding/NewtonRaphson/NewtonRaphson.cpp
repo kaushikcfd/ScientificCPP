@@ -6,7 +6,7 @@
  */
 
 #include "NewtonRaphson.h"
-
+#define epsilon 1e-3
 /**
  * @name		newtonRaphson
  * @brief		This is the main working function of the file. Every work of the file is done in this function.
@@ -21,13 +21,16 @@
  * 		vector<double> derivedpoly = polyDeriv(GivenPoly);//Storing the coefficients of the nth degree Legendre Polynomial in the variable polyn
  * 	@endcode
  */
-double newtonRaphson(function<double(double)> func, function<double(double)> deriv ,double x)
+double newtonRaphson(function<double(double)> func ,double x)
 {
-	double x_curr;
+	double deriv;
+	double x_curr= x;
 	double x_pre = x;///This is the storage of the initial guess and for developing the nice iterative struacture of the root.
 	do
-	{
-		x_curr = x_pre - (func(x_pre))/(deriv(x_pre));	
+	{ 
+		x_pre = x_curr;
+		deriv = (func(x_pre+epsilon)-func(x_pre-epsilon))/(2*epsilon);
+		x_curr = x_pre - (func(x_pre))/(deriv);	
 	}while(abs(x_curr - x_pre) >= 1e-6);
 	return x_curr ;
 }

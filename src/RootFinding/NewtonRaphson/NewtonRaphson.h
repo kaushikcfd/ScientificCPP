@@ -7,6 +7,6 @@
 
 using namespace std;
 
-double newtonRaphson( function<double(double)> , function<double(double)>  , double );
+double newtonRaphson( function<double(double)>  , double );
 
 
