@@ -14,6 +14,7 @@
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
 #include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
 #include "../Polynomial/PolyEval/PolyEval.cpp"
+#include "../Polynomial/SyntheticDivision/SyntheticDivision.cpp"
 #include "../RootFinding/NewtonRaphson/NewtonRaphson.cpp"
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
