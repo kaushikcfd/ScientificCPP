@@ -11,11 +11,13 @@
 #include "../Essentials/StepFill/StepFill.cpp"
 #include "../MatrixOperations/GaussElimination/GaussElimination.cpp"
 #include "../Interpolation/Equispaced/Equispaced.cpp"
+#include "../Interpolation/LegendreGauss/LegendreGauss.cpp"
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
 #include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
 #include "../Polynomial/PolyEval/PolyEval.cpp"
 #include "../Polynomial/SyntheticDivision/SyntheticDivision.cpp"
 #include "../RootFinding/NewtonRaphson/NewtonRaphson.cpp"
+
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
 #endif
