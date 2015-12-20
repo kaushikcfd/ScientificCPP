@@ -17,7 +17,7 @@
 
 #include <vector>
 #include <cstdio>
-
+#include <functional>
 #include "../../MatrixOperations/GaussElimination/GaussElimination.h"
 #include "../../Essentials/Zero/Zero.h"
 #include "../../Essentials/StepFill/StepFill.h"
@@ -28,6 +28,6 @@
 
 using namespace std;
 
-vector<double> equiInterpolation(double start, double end, unsigned int N, const vector<double>& Y);
+vector<double> equiInterpolation(double start, double end, unsigned int N, function<double(double)> f);
 
 /**END OF THE FILE.**/

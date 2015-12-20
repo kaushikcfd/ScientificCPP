@@ -1,14 +1,15 @@
 #include <vector>
+#include <functional>
 #include "../../Polynomial/LegendrePoynomial/LegendrePoynomial.h"
 #include "../../Polynomial/PolyEval/PolyEval.h"
 #include "../../Polynomial/SyntheticDivision/SyntheticDivision.h"
 #include "../../RootFinding/NewtonRaphson/NewtonRaphson.h"
 
-#ifndef LegendreGauss_H
-#define LegendreGauss_H
+#ifndef LegendreGaussNodes_H
+#define LegendreGaussNodes_H
 #endif
 
 using namespace std;
 
-vector<double> legendreGauss( unsigned n );
+vector<double> legendreGaussNodes( unsigned n );
 
