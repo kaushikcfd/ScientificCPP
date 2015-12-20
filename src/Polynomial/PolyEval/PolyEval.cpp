@@ -15,8 +15,8 @@
  *
  * Example usage
  * @code
- * 		vector<double> derivedpoly = polyDeriv(GivenPoly);//Storing the coefficients of the nth degree Legendre Polynomial in the variable polyn
- * 	@endcode
+ * 		f_x = polyEval(GivenPoly,x);///This would return the value of the polynomial at the point 'x'
+ * @endcode
  */
 double polyEval(vector<double> GivenPoly, double x)
 {

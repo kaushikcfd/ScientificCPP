@@ -4,9 +4,17 @@ int main()
 {
 	vector<double> x;
 	double y;
-	x = legendrePoly(4);
+	x .push_back(6);
+	x.push_back(-5);
+	x.push_back(1);
 	display(x);
-	y = polyEval(x,0);
-	printf("%.6f",y);
+	function<double(double)> eval = [&x](double a){ return (polyEval(x,a)); };
+	function<double(double)> deriv = [&x](double a){return (polyEval((polyDeriv(x)),a));};
+
+	y = eval(100);
+	printf("%.6f\n",y);
+	y = deriv(2.5);
+	printf("%.6f\n",y);
+	return 0;
 
 }

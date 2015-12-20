@@ -2,6 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
+#include <functional>
 #include "../Essentials/Zero/Zero.cpp"
 #include "../Essentials/One/One.cpp"
 #include "../Essentials/ArrayDisplay/ArrayDisplay.cpp"
@@ -13,6 +14,8 @@
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
 #include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
 #include "../Polynomial/PolyEval/PolyEval.cpp"
+#include "../RootFinding/NewtonRaphson/NewtonRaphson.cpp"
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
 #endif
+using namespace std;
