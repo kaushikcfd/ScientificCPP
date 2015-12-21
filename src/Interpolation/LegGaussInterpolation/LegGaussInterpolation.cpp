@@ -20,7 +20,7 @@
  */
 vector<double> legendreGaussInterpolation(double start, double end, unsigned n, function<double(double)> f)
 {
-	n++;
+	n++;///Since for an n-degree polynomial we would need n+1 nodes.
 	if(start>=end)
 	{
 		printf("ERROR: Please look into it there is some error in the given inputs for legendreGaussInterpolation()\n");

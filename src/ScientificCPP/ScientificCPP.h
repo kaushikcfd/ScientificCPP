@@ -15,6 +15,7 @@
 //////////////////////////////////////////////
 #include "../Interpolation/Equispaced/Equispaced.cpp"
 #include "../Interpolation/LegendreGaussNodes/LegendreGaussNodes.cpp"
+#include "../Interpolation/LegendreGaussWeights/LegendreGaussWeights.cpp"
 #include "../Interpolation/LegGaussInterpolation/LegGaussInterpolation.cpp"
 //////////////////////////////////////////////
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
