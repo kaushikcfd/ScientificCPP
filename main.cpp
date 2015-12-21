@@ -7,8 +7,10 @@ double f(double x)
 
 int main()
 {
-	vector<double> x;
-	x = lobattoInterpolation(-2,2,5,f);
-	display(x);
+	double x;
+	x = lobattoIntegration(0,3.14,7,f);
+	printf("**********************\n%.6f\n*******************\n",x);
+	x = legendreGaussIntegration(0,3.14,7,f);
+	printf("**********************\n%.6f\n*******************\n",x);	
 	return 0;
 }

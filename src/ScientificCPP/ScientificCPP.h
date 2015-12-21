@@ -21,6 +21,9 @@
 #include "../Interpolation/LobattoWeights/LobattoWeights.cpp"
 #include "../Interpolation/LobattoInterpolation/LobattoInterpolation.cpp"
 //////////////////////////////////////////////
+#include "../Integration/LegGaussIntegration/LegGaussIntegration.cpp"
+#include "../Integration/LobattoIntegration/LobattoIntegration.cpp"
+//////////////////////////////////////////////
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
 #include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
 #include "../Polynomial/PolyEval/PolyEval.cpp"
