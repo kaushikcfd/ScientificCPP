@@ -8,12 +8,7 @@ double f(double x)
 int main()
 {
 	vector<double> x;
-	//x = legendreGaussInterpolation(-1,1,6,f);
-	printf("Displaying the nodes\n");
-	x = lobattoNodes(6);
-	display(x);
-	printf("Displaying the weights\n");
-	x = lobattoWeights(6);
+	x = lobattoInterpolation(-2,2,5,f);
 	display(x);
 	return 0;
 }

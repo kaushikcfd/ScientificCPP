@@ -19,6 +19,7 @@
 #include "../Interpolation/LegGaussInterpolation/LegGaussInterpolation.cpp"
 #include "../Interpolation/LobattoNodes/LobattoNodes.cpp"
 #include "../Interpolation/LobattoWeights/LobattoWeights.cpp"
+#include "../Interpolation/LobattoInterpolation/LobattoInterpolation.cpp"
 //////////////////////////////////////////////
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
 #include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
