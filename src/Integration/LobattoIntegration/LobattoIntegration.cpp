@@ -32,14 +32,16 @@ double lobattoIntegration(double start, double end, unsigned n, function<double(
 	Roots = (0.5*(start+end))*ones(n) +  (0.5*(start-end))*Roots;///Made a shift from the computational space to the physical space.	
 	vector<double> Values;///Vector to store the value of the function at the given nodes.
 	unsigned i;///For the counter requirements of the for loop ahead.
+	
+
 	for(i=0;i<n;i++)
 		Values.push_back(f(Roots[i]));
-
+	
 	double integral=0.0;
 	for(i=0;i<n;i++)
 	{
 		integral = integral + Values[i]*Weights[i];
 	}
 	
-	return integral;
+	return (0.5*(end-start)*(integral));
 }

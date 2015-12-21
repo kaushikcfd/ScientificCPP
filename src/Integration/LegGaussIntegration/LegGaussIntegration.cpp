@@ -40,6 +40,6 @@ double legendreGaussIntegration(double start, double end, unsigned n, function<d
 	{
 		integral = integral + Values[i]*Weights[i];
 	}
-	
+	integral = integral	* 0.5 * (end-start);
 	return integral;
 }
