@@ -6,8 +6,8 @@
 #include "../../Polynomial/SyntheticDivision/SyntheticDivision.h"
 #include "../../RootFinding/NewtonRaphson/NewtonRaphson.h"
 
-#ifndef LegendreGaussNodes_H
-#define LegendreGaussNodes_H
+#ifndef LobattoNodes_H
+#define LobattoNodes_H
 #endif
 
 using namespace std;

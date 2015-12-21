@@ -18,6 +18,7 @@
 #include "../Interpolation/LegendreGaussWeights/LegendreGaussWeights.cpp"
 #include "../Interpolation/LegGaussInterpolation/LegGaussInterpolation.cpp"
 #include "../Interpolation/LobattoNodes/LobattoNodes.cpp"
+#include "../Interpolation/LobattoWeights/LobattoWeights.cpp"
 //////////////////////////////////////////////
 #include "../Polynomial/LegendrePoynomial/LegendrePoynomial.cpp"
 #include "../Polynomial/PolyDerivative/PolyDerivative.cpp"
