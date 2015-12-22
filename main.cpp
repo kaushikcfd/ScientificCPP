@@ -11,7 +11,7 @@ int main()
 	vector<double> x;
 	x.push_back(-1);
 	x.push_back(1);
-	MM = fluxMatrix(x);
+	MM = transpose(derivativeMatrix(x));
 	display(MM);
 	return 0;
 }

@@ -12,6 +12,7 @@
 #include "../Essentials/StepFill/StepFill.cpp"
 //////////////////////////////////////////////
 #include "../MatrixOperations/GaussElimination/GaussElimination.cpp"
+#include "../MatrixOperations/Transpose/transpose.cpp"
 //////////////////////////////////////////////
 #include "../Interpolation/Equispaced/Equispaced.cpp"
 #include "../Interpolation/LegendreGaussNodes/LegendreGaussNodes.cpp"
