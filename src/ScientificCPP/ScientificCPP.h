@@ -20,6 +20,7 @@
 #include "../Interpolation/LobattoNodes/LobattoNodes.cpp"
 #include "../Interpolation/LobattoWeights/LobattoWeights.cpp"
 #include "../Interpolation/LobattoInterpolation/LobattoInterpolation.cpp"
+#include "../Interpolation/LagrangePolynomials/LagrangePolynomials.cpp"
 //////////////////////////////////////////////
 #include "../Integration/LegGaussIntegration/LegGaussIntegration.cpp"
 #include "../Integration/LobattoIntegration/LobattoIntegration.cpp"

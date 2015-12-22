@@ -7,4 +7,17 @@ void display(vector<double>  GivenVector)
 		printf("%.6f\n",GivenVector[CurrentElement]);
 }
 
+void display(vector< vector<double> > GivenMatrix)
+{
+	unsigned i,j;
+	unsigned m = GivenMatrix.size(),n;
+	for(i=0;i<m;i++)
+	{
+		n= GivenMatrix[i].size();
+		for(j=0;j<n;j++)
+			printf("%.6f  ",GivenMatrix[i][j]);
+		printf("\n");
+	}
+}
+
 /**END OF FILE.**/

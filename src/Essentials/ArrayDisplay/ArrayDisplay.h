@@ -18,5 +18,5 @@
 using namespace std;
 
 void display(vector<double> );
-
+void display(vector< vector<double> >);
 /**END OF FILE.**/

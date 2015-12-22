@@ -7,8 +7,11 @@ double f(double x)
 
 int main()
 {
-	double x;
-	x = legendreGaussIntegration(0,3.14159,7,f);
-	printf("**********************\n%.6f\n*******************\n",x);
+	vector<	vector<double> > poly;
+	vector<double> x;
+	x.push_back(-1);
+	x.push_back(1);
+	poly = lagrangePolynomials(x);
+	display(poly);
 	return 0;
 }
