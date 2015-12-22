@@ -7,11 +7,11 @@ double f(double x)
 
 int main()
 {
-	vector<	vector<double> > poly;
+	vector<	vector<double> > MM;
 	vector<double> x;
 	x.push_back(-1);
 	x.push_back(1);
-	poly = lagrangePolynomials(x);
-	display(poly);
+	MM = massMatrix(x);
+	display(MM);
 	return 0;
 }

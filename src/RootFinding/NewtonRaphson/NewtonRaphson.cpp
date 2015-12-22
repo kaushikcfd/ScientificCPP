@@ -6,7 +6,7 @@
  */
 
 #include "NewtonRaphson.h"
-#define epsilon 1e-3
+
 /**
  * @name		newtonRaphson
  * @brief		This is the main working function of the file. Every work of the file is done in this function.
@@ -29,7 +29,7 @@ double newtonRaphson(function<double(double)> func ,double x)
 	do
 	{ 
 		x_pre = x_curr;
-		deriv = (func(x_pre+epsilon)-func(x_pre-epsilon))/(2*epsilon);
+		deriv = (func(x_pre+epsi)-func(x_pre-epsi))/(2*epsi);
 		x_curr = x_pre - (func(x_pre))/(deriv);	
 	}while(abs(x_curr - x_pre) >= 1e-6);
 	return x_curr ;
