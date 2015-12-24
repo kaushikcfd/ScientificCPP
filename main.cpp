@@ -7,11 +7,17 @@ double f(double x)
 
 int main()
 {
-	vector<	vector<double> > MM;
-	vector<double> x;
-	x.push_back(-1);
-	x.push_back(1);
-	MM = transpose(derivativeMatrix(x));
+	vector<	vector<double> > MM = zeros(3,3);
+	MM[0][0]=1.0/3.0;
+	MM[0][1]=1.0/6;
+	MM[0][2]=0.0;
+	MM[1][0]=1.0/6;
+	MM[1][1]=4.0/6;
+	MM[1][2]=1.0/6;
+	MM[2][0]=0.0;
+	MM[2][1]=1.0/6;
+	MM[2][2]=2.0/6;
+	MM = inverse(MM);
 	display(MM);
 	return 0;
 }

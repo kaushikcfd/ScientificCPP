@@ -13,6 +13,7 @@
 //////////////////////////////////////////////
 #include "../MatrixOperations/GaussElimination/GaussElimination.cpp"
 #include "../MatrixOperations/Transpose/transpose.cpp"
+#include "../MatrixOperations/Inverse/Inverse.cpp"
 //////////////////////////////////////////////
 #include "../Interpolation/Equispaced/Equispaced.cpp"
 #include "../Interpolation/LegendreGaussNodes/LegendreGaussNodes.cpp"
