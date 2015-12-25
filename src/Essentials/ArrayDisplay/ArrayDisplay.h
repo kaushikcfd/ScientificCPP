@@ -11,6 +11,8 @@
 
 #include <vector>
 #include <cstdio>
+#include <cmath>
+
 #ifndef ArrayDisplay_H
 #define ArrayDisplay_H
 #endif
@@ -19,4 +21,5 @@ using namespace std;
 
 void display(vector<double> );
 void display(vector< vector<double> >);
+void sparseDisplay(vector< vector<double> >);
 /**END OF FILE.**/

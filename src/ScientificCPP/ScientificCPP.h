@@ -37,6 +37,8 @@
 #include "../GalerkinMethods/MassMatrix/MassMatrix.cpp"
 #include "../GalerkinMethods/FluxMatrix/FluxMatrix.cpp"
 #include "../GalerkinMethods/DerivativeMatrix/DerivativeMatrix.cpp"
+#include "../GalerkinMethods/EquiMassDSS/EquiMassDSS.cpp"
+#include "../GalerkinMethods/EquiDervativeDSS/EquiDerivativeDSS.cpp"
 //////////////////////////////////////////////
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
