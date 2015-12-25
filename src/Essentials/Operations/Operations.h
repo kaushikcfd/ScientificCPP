@@ -16,6 +16,9 @@
 
 #include <vector>
 #include <cstdio>
+
+#include "../Zero/Zero.h"
+
 #ifndef Operations_H
 #define Operations_H
 #endif
@@ -32,3 +35,5 @@ vector<double> operator+(vector<double> LeftVector, vector <double> RightVector)
 vector<double> operator-(vector<double> LeftVector, vector <double> RightVector);
 
 vector<double> operator*(vector<double> LeftVector, vector <double> RightVector);
+
+vector< vector<double> > operator*(  vector< vector<double> > ,  vector< vector<double> > );

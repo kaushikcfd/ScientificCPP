@@ -10,7 +10,8 @@
     * `vector<double> stepFill(double start, double step, double end )`: This would return a column vector from `start` to end `end`with a step size `step`
 * ### Matrix Operations-
     * `vector<double> GaussElimination(vector< vector<double> > A, vector<double> b)`: Given the inputs it would output `x` column vector as the solution of the equation `Ax=b`
-    * `vector<double> transpose(vector< vector<double> >)`: This would return the transpoe of a given matrix.
+    * `vector< vector<double> > transpose(vector< vector<double> >)`: This would return the transpoe of a given matrix.
+	* `vector< vector<double> >`inverse(vector< vector<double> > )` : This would return the inverse of the given matrix.
 * ### Interpolation 
     * `vector<double> equiInterpolation(double start, double end, unsigned , function<double(double)>)`: Given a function and the start and end points it would interpolate equisapced points from start to end. And it would return the coefficients of the polynomials where the value of the _i th_ power of x.
     * `vector<double> legendreGaussInterpolation(double start, double end, unsigned n, function<double(double)>)`: Given a function and the start and end points it would interpolate using n+1 Legendre Gauss points from start to end. And it would return the coefficients of the polynomials where the value of the _i th_ power of x.

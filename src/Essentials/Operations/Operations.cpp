@@ -70,3 +70,35 @@ vector<double> operator*(vector<double> LeftVector, vector <double> RightVector)
 		return LeftVector;
 	}
 }
+
+
+
+
+
+vector< vector<double> > operator*( vector< vector<double> > LeftMatrix, vector< vector<double> > RightMatrix )
+{
+	unsigned p = LeftMatrix.size(), q = LeftMatrix[0].size(), r= RightMatrix.size(),s= RightMatrix[0].size();
+	if(r!=q)
+	{
+		printf("ERROR: The matrices given to be multiplied do not have the property by which they can be multiplied.\n");
+		return LeftMatrix;
+	}
+	
+	unsigned i,j,k;///These all act as counters for the loop.
+	
+	vector< vector<double> > Result = zeros(p,s);
+	
+	for(i=0;i<p;i++)
+	{
+		for(j=0;j<s;j++)
+		{
+
+			for(k=0;k<r;k++)
+			{
+				Result[i][j] = Result[i][j] + LeftMatrix[i][k]*RightMatrix[k][j];			
+			}
+		}
+	}
+
+	return Result;
+}
