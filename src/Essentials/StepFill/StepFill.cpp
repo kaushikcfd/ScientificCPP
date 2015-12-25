@@ -14,7 +14,7 @@ vector<double> stepFill(double start, double stepSize, double end)
 			else
 				break;
 		}
-		printf("Success, VECTOR of size %ld created with stepSize %.6f.\n",ResultVector.size(),stepSize);	
+		//printf("Success, VECTOR of size %ld created with stepSize %.6f.\n",ResultVector.size(),stepSize);	
 		return ResultVector;
 	}
 	else

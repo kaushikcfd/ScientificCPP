@@ -8,9 +8,12 @@ double f(double x)
 int main()
 {
 	
-	vector< vector<double> > M;
-	M = derivativeMatrix(lobattoNodes(5));
-	display(M);
+	vector< vector<double> > R = ones(3,3);
+
+	display(R * ones(3));
+
+	
+	
 	
 	return 0;
 }

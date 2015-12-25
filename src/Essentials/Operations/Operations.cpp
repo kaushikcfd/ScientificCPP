@@ -6,7 +6,7 @@ vector<double> operator*(vector<double> GivenVector, const double Factor)
 	vector<double> Result(GivenVector.begin(),GivenVector.end());
 	for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
 	 	Result[CurrentElement] = GivenVector[CurrentElement] * Factor;
-	printf("Success!! The matrix was multiplied by a factor\n");
+	//printf("Success!! The matrix was multiplied by a factor\n");
 	return Result;  
 } 
 
@@ -25,7 +25,7 @@ vector<double> operator+(vector<double> LeftVector, vector <double> RightVector)
 		vector<double> Result(LeftVector.begin(),LeftVector.end());
 		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
 	 		Result[CurrentElement] += RightVector[CurrentElement] ;
-		printf("Success the given matrices have been added!\n");
+		//printf("Success the given matrices have been added!\n");
 		return Result;	
 	}
 	else
@@ -43,7 +43,7 @@ vector<double> operator-(vector<double> LeftVector, vector <double> RightVector)
 		vector<double> Result(LeftVector.begin(),LeftVector.end());
 		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
 	 		Result[CurrentElement] -= RightVector[CurrentElement] ;
-		printf("Success the given matrices have been subtracted!\n");
+		//printf("Success the given matrices have been subtracted!\n");
 		return Result;	
 	}
 	else
@@ -61,7 +61,7 @@ vector<double> operator*(vector<double> LeftVector, vector <double> RightVector)
 		vector<double> Result(LeftVector.begin(),LeftVector.end());
 		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
 	 		Result[CurrentElement] =LeftVector[CurrentElement]* RightVector[CurrentElement] ;
-		printf("Success!! The dot product of the given matrices has been evaluated.\n");
+		//printf("Success!! The dot product of the given matrices has been evaluated.\n");
 		return Result;	
 	}
 	else
@@ -121,6 +121,33 @@ vector< vector<double> >  operator*(const double Factor, vector< vector<double> 
 {
 	vector< vector<double> > Result;
 	Result = GivenMatrix*Factor;
+	return Result;
+}
+
+
+vector<double> operator*(vector< vector<double> > LeftMatrix, vector<double> Array)
+{
+	vector<double> Result;///The result vector which is to be returned.
+	
+	unsigned m = LeftMatrix.size();///The number of rows of the matrix.
+	unsigned n = LeftMatrix[0].size();///The number of columns of the matrix.
+	
+	if(n!=Array.size())
+	{
+		printf("ERROR: The given vector and the matrix are not supposed to be multiplied!!");
+		return Array;
+	}
+
+	Result = zeros(m);
+
+	unsigned i,j;///Counters for the loop.
+
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+			Result[i]+=LeftMatrix[i][j]*Array[j];
+	}
+	
 	return Result;
 }
 
