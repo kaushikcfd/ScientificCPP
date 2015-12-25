@@ -7,13 +7,9 @@ double f(double x)
 
 int main()
 {
-	
-	vector< vector<double> > R = ones(3,3);
+	vector<double> k;
+	k= equiCoords(0.0,2.0,4,4);
+	display(k);
 
-	display(R * ones(3));
-
-	
-	
-	
 	return 0;
 }

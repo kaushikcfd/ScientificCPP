@@ -1,5 +1,6 @@
 #include <vector>
 #include <functional>
+#include <algorithm>
 #include "../../Polynomial/LegendrePoynomial/LegendrePoynomial.h"
 #include "../../Polynomial/PolyEval/PolyEval.h"
 #include "../../Polynomial/PolyDerivative/PolyDerivative.h"

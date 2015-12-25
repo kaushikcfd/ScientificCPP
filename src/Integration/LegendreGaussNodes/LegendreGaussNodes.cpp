@@ -34,5 +34,6 @@ vector<double> legendreGaussNodes(unsigned n)
 		Poly = synthDiv(Poly,root);
 		Result.push_back(root);
 	}
+	sort(Result.begin(),Result.end());
 	return Result;
 }

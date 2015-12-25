@@ -36,5 +36,6 @@ vector<double> lobattoNodes(unsigned n)
 		Result.push_back(root);
 	}
 	Result.push_back(-1);
+	sort(Result.begin(),Result.end());
 	return Result;
 }

@@ -39,6 +39,7 @@
 #include "../GalerkinMethods/DerivativeMatrix/DerivativeMatrix.cpp"
 #include "../GalerkinMethods/EquiMassDSS/EquiMassDSS.cpp"
 #include "../GalerkinMethods/EquiDervativeDSS/EquiDerivativeDSS.cpp"
+#include "../GalerkinMethods/EquiCoords/EquiCoords.cpp"
 //////////////////////////////////////////////
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
