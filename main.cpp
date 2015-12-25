@@ -18,8 +18,9 @@ int main()
 	L[2][1]=1.0/6;
 	L[2][2]=2.0/6;
 	L = inverse(L);
+	L = 2*L;
 	display(L);
-
+	
 
 	R[0][0]=-1.0;
 	R[0][1]=1.0;
@@ -31,7 +32,7 @@ int main()
 	R[2][1]=-1.0;
 	R[2][2]=1.0;
 	display(R);
-	K = L*R;
+	K = 0.25*L*R;
 	printf("Displaying the result\n");
 	display(K);
 

@@ -102,3 +102,26 @@ vector< vector<double> > operator*( vector< vector<double> > LeftMatrix, vector<
 
 	return Result;
 }
+
+
+
+
+vector< vector<double> > operator*(vector< vector<double> >  GivenMatrix, const double Factor)
+{
+	unsigned m = GivenMatrix.size();
+	unsigned i;///Counters for the loop.
+	for(i=0;i<m;i++)	
+			GivenMatrix[i] = GivenMatrix[i]*Factor;
+
+	return GivenMatrix; /// **NOTE:** The same matrix has been returned to avoid more space complexity.
+
+} 
+
+vector< vector<double> >  operator*(const double Factor, vector< vector<double> > GivenMatrix)
+{
+	vector< vector<double> > Result;
+	Result = GivenMatrix*Factor;
+	return Result;
+}
+
+

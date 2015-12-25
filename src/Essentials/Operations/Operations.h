@@ -37,3 +37,8 @@ vector<double> operator-(vector<double> LeftVector, vector <double> RightVector)
 vector<double> operator*(vector<double> LeftVector, vector <double> RightVector);
 
 vector< vector<double> > operator*(  vector< vector<double> > ,  vector< vector<double> > );
+
+vector< vector<double> > operator*( vector< vector<double> > , const double  );
+
+vector< vector<double> > operator*( const double , vector< vector<double> > );
+
