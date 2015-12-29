@@ -1,6 +1,6 @@
 #include "Plotter.h"
 
-void plot(vector<double> & LeftVector, vector<double> & RightVector,string GraphTitle="", string LegendTitle="")
+void plot(vector<double> LeftVector, vector<double> RightVector,string GraphTitle="", string LegendTitle="")
 {
 	if(RightVector.size()==LeftVector.size())
 	{
@@ -44,12 +44,67 @@ void plot(vector<double> & LeftVector, vector<double> & RightVector,string Graph
 		fclose(stdout);
 		freopen ("/dev/tty", "a", stdout);
 		system("gnuplot> load 'temp.gnu'");
+		system("rm -rf temp* load");
 		cerr<<"Success, Plotting of Vectors done. Check the working directory file with output.jpg is created!!\n";		
 	}
 	else
 		printf("ERROR: The given vectors are of different lengths, hence aborting!!\n");
 }
 
+
+
+void plot(vector<double> LeftVector, vector< vector<double> > RightVector,string GraphTitle, vector<string> LegendTitle)
+{
+	unsigned n = LeftVector.size();
+	unsigned m = RightVector.size();
+	unsigned i,j;///Counter for the loop
+	string FileName ;
+	freopen("temp0.dat","w",stdout);
+	printf("# X\tY\n");
+	
+	for(i = 0; i < n; i++)
+		printf("%.6f\t%.6f\n",LeftVector[i],RightVector[0][i]);
+	fclose(stdout);
+	freopen("temp.gnu","w",stdout);
+	printf("reset\n");
+	printf("set terminal jpeg interlace enhanced size 1366,768\n");
+	printf("set output \"output.jpg\"\n");
+	printf("set key right box\n");
+	printf("set grid\n");
+	printf("set title '%s'\n",GraphTitle.c_str());
+	printf("set ylabel 'Y'\n");
+	printf("set xlabel 'X'\n");
+	printf("plot 'temp0.dat' title '%s' w lines ls 1",LegendTitle[0].c_str());
+	
+	for(i=1;i<m;i++)
+	{
+		if(RightVector[i].size()==n)
+		{
+			FileName = "temp" + to_string(i) + ".dat";
+			freopen(FileName.c_str(),"w",stdout);
+			printf("# X\tY\n");
+			
+			for(j = 0; j < n; j++)
+				printf("%.6f\t%.6f\n",LeftVector[j],RightVector[i][j]);
+			
+			fclose(stdout);
+
+			freopen("temp.gnu","a",stdout);
+			
+			printf(", 'temp%d.dat' title '%s' w lines ls %d",i,LegendTitle[i].c_str(),i+1);
+
+			fclose(stdout);
+		}
+		else
+			printf("ERROR: The given vectors are of different lengths, hence aborting!!\n");		
+	}
+	
+
+	freopen ("/dev/tty", "a", stdout);
+	system("gnuplot> load 'temp.gnu'");
+	system("rm -rf temp* load");
+	cerr<<"Success, Plotting of Vectors done. Check the working directory file with output.jpg is created!!\n";		
+}
 
 
 

@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <functional>
+#include <string>
 ////////////////////////////////////////////
 #include "../Essentials/Zero/Zero.cpp"
 #include "../Essentials/One/One.cpp"

@@ -24,9 +24,9 @@
 
 using namespace std;
 
-void plot(vector<double> & , vector<double> & ,string , string );
+void plot(vector<double>  , vector<double>  ,string , string );
 
-
+void plot(vector<double>  , vector<double>  ,string , vector<string> );
 
 
 /**END OF THE FILE.**/
