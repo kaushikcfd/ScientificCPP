@@ -1,14 +1,14 @@
 /**
- * @file	EquiDerivativeDSS.cpp
+ * @file	DerivativeCGDSS.cpp
  * @Author	Kaushik Kulkarni (kaushikcfd@gmail.com)
  * @date	December, 2015
  * @brief	This is the file which contains the definition of the function equiDerivativeDSS(unsigned Ne, unsigned N). Here Ne denoted the number of elements and N denotes the order of polynomial in each of the element, hence telling us that the total number of grid points = N*Ne + 1. By default this function would try to solve a problem with periodic boundary condition but once the user has the `` D`` derivative matrix it should not at all be tough to change it according to the given boundary condition. By default the program uses Lobatto Nodes. but can easily be changed in the function to make it give different for different types of GridPoints.
  * */
 
-#include "EquiDerivativeDSS.h"
+#include "DerivativeCGDSS.h"
 
 /**
- * @name		equiDerivativeDSS
+ * @name		derivativeCGDSS
  * @brief		This is the main working function of the file. Every work of the file is done in this function.
  * @param[in]	unsigned Ne
  * This would denote the number of elements in the given problem.
@@ -22,7 +22,7 @@
  * 	@endcode
  */
 
-vector< vector<double> > equiDerivativeDSS(unsigned Ne, unsigned N)
+vector< vector<double> > derivativeCGDSS(unsigned Ne, unsigned N)
 {
 	vector< vector<double> > D;///This would be the total summed up derivative matrix.
 	vector< vector<double> > d;///This would denote the temporary derivative matrix involved in each element.
@@ -41,14 +41,19 @@ vector< vector<double> > equiDerivativeDSS(unsigned Ne, unsigned N)
 				D[j+i*N][k+i*N] = D[j + i*N][k+i*N] + d[j][k];
 		}
 	}
-
-	for(i=1;i<=N;i++)
+	
+	i = N*Ne-1;
+	for(j=0;j<N;j++)
 	{
-		D[0][N*Ne-i] += D[N*Ne][N*Ne-i];
-		D[N*Ne][N*Ne-i] = 0;
-		D[N*Ne-i][0] += D[N*Ne-i][N*Ne];
-		D[N*Ne-i][N*Ne] = 0;
+		D[i][0]+=D[i][Ne*N];
+		D[i][Ne*N]=0;
+		D[0][i]+=D[Ne*N][i];
+		D[Ne*N][i]=0;
+		i--;
 	}
+	D[0][0]+=D[Ne*N][Ne*N];
+	D[Ne*N][Ne*N]=0;
+
 
 	return D;
 }

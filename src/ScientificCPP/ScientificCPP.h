@@ -37,9 +37,11 @@
 #include "../GalerkinMethods/MassMatrix/MassMatrix.cpp"
 #include "../GalerkinMethods/FluxMatrix/FluxMatrix.cpp"
 #include "../GalerkinMethods/DerivativeMatrix/DerivativeMatrix.cpp"
-#include "../GalerkinMethods/EquiMassDSS/EquiMassDSS.cpp"
-#include "../GalerkinMethods/EquiDervativeDSS/EquiDerivativeDSS.cpp"
 #include "../GalerkinMethods/EquiCoords/EquiCoords.cpp"
+#include "../GalerkinMethods/CG/MassCGDSS/MassCGDSS.cpp"
+#include "../GalerkinMethods/CG/DerivativeCGDSS/DerivativeCGDSS.cpp"
+#include "../GalerkinMethods/DG/MassDGDSS/MassDGDSS.cpp"
+#include "../GalerkinMethods/DG/DerivativeDGDSS/DerivativeDGDSS.cpp"
 //////////////////////////////////////////////
 #ifndef ScientificCPP_H
 #define ScientificCPP_H

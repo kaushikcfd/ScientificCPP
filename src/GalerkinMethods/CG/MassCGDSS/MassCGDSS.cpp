@@ -1,14 +1,14 @@
 /**
- * @file	EquiMassDSS.cpp
+ * @file	MassCGDSS.cpp
  * @Author	Kaushik Kulkarni (kaushikcfd@gmail.com)
  * @date	December, 2015
  * @brief	This is the file which contains the definition of the function equiMassDSS(unsigned Ne, unsigned N). Here Ne denoted the number of elements and N denotes the order of polynomial in each of the element, hence telling us that the total number of grid points = N*Ne + 1. By default this function would try to solve a problem with periodic boundary condition but once the user has the `` M`` matrix it should not at all be tough to change it according to the given boundary condition. By default the program uses Lobatto Nodes. but can easily be changed in the function to make it give different for different types of GridPoints.
  * */
 
-#include "EquiMassDSS.h"
+#include "MassCGDSS.h"
 
 /**
- * @name		equiMassDSS
+ * @name		massCGDSS
  * @brief		This is the main working function of the file. Every work of the file is done in this function.
  * @param[in]	unsigned Ne
  * This would denote the number of elements in the given problem.
@@ -22,7 +22,7 @@
  * 	@endcode
  */
 
-vector< vector<double> > equiMassDSS(unsigned Ne, unsigned N)
+vector< vector<double> > massCGDSS(unsigned Ne, unsigned N)
 {
 	vector< vector<double> > M;///This would be the total summed up mass matrix.
 	vector< vector<double> > m;///This would denote the temporary mass matrix involved in each element.
@@ -42,13 +42,20 @@ vector< vector<double> > equiMassDSS(unsigned Ne, unsigned N)
 		}
 	}
 
-	for(i=1;i<=N;i++)
+	i = N*Ne-1;
+	for(j=0;j<N;j++)
 	{
-		M[0][N*Ne-i] += M[N*Ne][N*Ne-i];
-		M[N*Ne][N*Ne-i] = 0;
-		M[N*Ne-i][0] += M[N*Ne-i][N*Ne];
-		M[N*Ne-i][N*Ne] = 0;
+		M[i][0]+=M[i][Ne*N];
+		M[i][Ne*N] = 0;
+		M[0][i]+=M[Ne*N][i];
+		M[Ne*N][i]=0;
+		i--;	
 	}
+
+	M[0][0]+=M[Ne*N][Ne*N];
+	M[Ne*N][Ne*N]=1;
+
+
 
 	return M;
 }

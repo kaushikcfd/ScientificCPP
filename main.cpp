@@ -7,9 +7,9 @@ double f(double x)
 
 int main()
 {
-	vector<double> k;
-	k= equiCoords(0.0,2.0,4,4);
-	display(k);
+	vector< vector<double> > k;
+	k= derivativeDGDSS(4,4);
+	sparseDisplay(k);
 
 	return 0;
 }
