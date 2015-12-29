@@ -32,7 +32,7 @@ vector< vector<double> > derivativeDGDSS(unsigned Ne, unsigned N)
 	unsigned j,k,l=0;///Denotes which of the node is going to be affected 
 	D = zeros(Np,Np);
 	points  = lobattoNodes(N+1);///N+1 because Using N+1 nodes we can construct N degree polynomial.
-	d = derivativeMatrix(points);
+	d = transpose(derivativeMatrix(points));
 	for(i=0;i<Ne;i++)
 	{
 		for(j=0;j<=N;j++)

@@ -152,3 +152,40 @@ vector<double> operator*(vector< vector<double> > LeftMatrix, vector<double> Arr
 }
 
 
+vector< vector<double> > operator+(vector< vector<double> > LeftVector, vector< vector <double> > RightVector)
+{
+	unsigned VectorSize=LeftVector.size();
+	if(RightVector.size()==VectorSize)
+	{
+		vector< vector<double> > Result = LeftVector;
+		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
+	 		Result[CurrentElement] = Result[CurrentElement]+ RightVector[CurrentElement] ;
+		//printf("Success the given matrices have been added!\n");
+		return Result;	
+	}
+	else
+	{
+		printf("ERROR: The arrays sent in for addition are of different sizes.\n");
+		return LeftVector;
+	}
+}
+
+
+vector< vector<double> > operator-(vector< vector<double> > LeftVector, vector< vector <double> > RightVector)
+{
+	unsigned VectorSize=LeftVector.size();
+	if(RightVector.size()==VectorSize)
+	{
+		vector< vector<double> > Result = LeftVector;
+		for (unsigned CurrentElement = 0; CurrentElement < VectorSize; CurrentElement++)
+	 		Result[CurrentElement] = Result[CurrentElement]- RightVector[CurrentElement] ;
+		//printf("Success the given matrices have been added!\n");
+		return Result;	
+	}
+	else
+	{
+		printf("ERROR: The arrays sent in for addition are of different sizes.\n");
+		return LeftVector;
+	}
+}
+

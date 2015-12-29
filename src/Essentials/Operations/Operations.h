@@ -43,3 +43,10 @@ vector< vector<double> > operator*( vector< vector<double> > , const double  );
 vector< vector<double> > operator*( const double , vector< vector<double> > );
 
 vector<double> operator*(vector< vector<double> > , vector<double> );
+
+vector< vector<double> >  operator+(vector< vector<double> > LeftVector, vector< vector <double> > RightVector);
+
+
+vector< vector<double> >  operator-(vector< vector<double> > LeftVector, vector< vector <double> > RightVector);
+
+

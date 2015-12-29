@@ -4,6 +4,9 @@
 #include <algorithm>
 
 #include "../../../Essentials/Zero/Zero.h"
+
+#include "../../../MatrixOperations/Transpose/transpose.h"
+
 #include "../../DerivativeMatrix/DerivativeMatrix.h"
 #include "../../../Integration/LobattoNodes/LobattoNodes.h"
 

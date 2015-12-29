@@ -38,10 +38,13 @@
 #include "../GalerkinMethods/FluxMatrix/FluxMatrix.cpp"
 #include "../GalerkinMethods/DerivativeMatrix/DerivativeMatrix.cpp"
 #include "../GalerkinMethods/EquiCoords/EquiCoords.cpp"
+#include "../GalerkinMethods/CoordsConversion/CoordsConversion.cpp"
 #include "../GalerkinMethods/CG/MassCGDSS/MassCGDSS.cpp"
 #include "../GalerkinMethods/CG/DerivativeCGDSS/DerivativeCGDSS.cpp"
 #include "../GalerkinMethods/DG/MassDGDSS/MassDGDSS.cpp"
 #include "../GalerkinMethods/DG/DerivativeDGDSS/DerivativeDGDSS.cpp"
+#include "../GalerkinMethods/DG/RusanovFluxDGDSS/RusanovFluxDGDSS.cpp"
+#include "../GalerkinMethods/DG/FluxDGDSS/FluxDGDSS.cpp"
 //////////////////////////////////////////////
 #ifndef ScientificCPP_H
 #define ScientificCPP_H

@@ -7,4 +7,4 @@ main.o: main.cpp
 	g++ -std=c++11 -c main.cpp
 
 clean:
-	rm -rf *.o test
+	rm -rf *.o test *.gnu *.temp *.jpg load

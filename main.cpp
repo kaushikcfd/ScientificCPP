@@ -7,9 +7,13 @@ double f(double x)
 
 int main()
 {
-	vector< vector<double> > k;
-	k= derivativeDGDSS(4,4);
-	sparseDisplay(k);
-
+	
+	//vector< vector<double> > A = derivativeDGDSS(4,4) - fluxDGDSS(4,4)*rusanovFluxDGDSS(4,4);
+	vector<double> b;
+	b.push_back(-1);
+	b.push_back(1);
+	vector< vector<double> > A = fluxMatrix(b);
+	display(A);
+	
 	return 0;
 }
