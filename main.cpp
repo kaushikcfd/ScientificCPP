@@ -28,9 +28,9 @@ int main()
 	plot(b,A,"Try",k);
 	
 **/	
-    vector< vector<double> > XGrid;
-    XGrid = yLimitsGrid(0,3,0,3,3,3,2);
-    display(XGrid);
+    vector< vector<double> > adj;
+    adj = elementNeighbours(3,3); 
+    display(adj);
     
     return 0;
 }

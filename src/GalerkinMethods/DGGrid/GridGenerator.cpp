@@ -91,4 +91,39 @@ vector< vector<double> > yLimitsGrid(double X_start, double X_end, double Y_star
     return Ylimits;
 }
 
+vector< vector<double> > elementNeighbours(unsigned Ne_x, unsigned Ne_y)///Note: This would be an 4*(Ne_x*Ne*y) matrix since each of the element would have 4 neighbours this is the case for periodic boundary condition, the first row would represent the top element, the second one bottom, then right and finally left :)
+{
+    vector< vector<double> > Neighbours;
+    vector<double> top(Ne_x*Ne_y,0),bottom(Ne_x*Ne_y,0),left(Ne_x*Ne_y,0),right(Ne_x*Ne_y,0);
+    unsigned i,j;
+    for(i=0;i<Ne_y;i++)
+    {
+        for(j=0;j<Ne_x;j++)
+        {
+            if(j!=(Ne_x-1))
+                right[i*Ne_x + j] = i*Ne_x + j+1;
+            else
+                right[i*Ne_x + j] = i*(Ne_x);
+            if(j!=0)
+                left[i*Ne_x + j] = i*Ne_x +j- 1;
+            else
+                left[i*Ne_x + j] = i*Ne_x + Ne_x -1;
+            if(i!=(Ne_y-1))
+                top[i*Ne_x + j] = (i+1)*Ne_x + j;
+            else
+                top[i*Ne_x + j] = j;
+            if(i!=0)
+                bottom[i*Ne_x + j] = (i-1)*Ne_x + j;
+            else
+                bottom[i*Ne_x + j] = (Ne_y-1)*Ne_x + j;                    
+        }
+    }
+    
 
+
+    Neighbours.push_back(top);
+    Neighbours.push_back(bottom);
+    Neighbours.push_back(right);
+    Neighbours.push_back(left);
+    return Neighbours;
+}

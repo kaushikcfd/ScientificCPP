@@ -18,5 +18,7 @@ vector< vector <double> >  xLimitsGrid(double , double, double, double,unsigned 
 
 vector< vector <double> >  yLimitsGrid(double , double, double, double,unsigned , unsigned ,unsigned );
 
+vector< vector < double > > elementNeighbours(unsigned , unsigned);
+
 #endif
 
