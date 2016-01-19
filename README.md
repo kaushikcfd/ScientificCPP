@@ -2,6 +2,7 @@
 
 
 ## Functions 
+
 * ### Essentials-
     * `vector<double> zeros(unsigned )`: This would return a column vector with all zeros.
     * `vector<double> ones(unsigned )`: This would return a column vector with all ones.
