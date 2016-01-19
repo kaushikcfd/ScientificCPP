@@ -11,6 +11,8 @@
     * `vector<double> display(vector<double> )`: Given a vector<double> as an input, it would display its contents.
     * `void plot(vector<double> , vector<double> )`: Given two vector it would make a plot `x` vs `y`.
     * `vector<double> stepFill(double start, double step, double end )`: This would return a column vector from `start` to end `end`with a step size `step`
+
+
 * ### Matrix Operations-
     * `vector<double> GaussElimination(vector< vector<double> > A, vector<double> b)`: Given the inputs it would output `x` column vector as the solution of the equation `Ax=b`
     * `vector< vector<double> > transpose(vector< vector<double> >)`: This would return the transpoe of a given matrix.
