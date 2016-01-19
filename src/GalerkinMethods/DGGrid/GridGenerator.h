@@ -3,14 +3,20 @@
 #include <functional>
 #include "../../Interpolation/LobattoNodes/LobattoNodes.h"
 #include "../../Essentials/Zero/Zero.h"
+#include "../../Essentials/StepFill/StepFill.h"
 
 using namespace std;
 
 #ifndef GridGeneration_H
 #define GridGeneration_H
-#endif
 
 vector < vector<double> > lobattoGrid(unsigned );
 
 vector< vector<double> > gridGenerator(double , double , double , double , unsigned , unsigned );
+
+vector< vector <double> >  xLimitsGrid(double , double, double, double,unsigned , unsigned ,unsigned );
+
+vector< vector <double> >  yLimitsGrid(double , double, double, double,unsigned , unsigned ,unsigned );
+
+#endif
 

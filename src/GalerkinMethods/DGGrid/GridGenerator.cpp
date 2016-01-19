@@ -44,3 +44,51 @@ vector< vector<double> > lobattoGrid(unsigned N)
     CompGrid.push_back(CompGridY);
     return CompGrid;
 }
+
+vector< vector<double> > xLimitsGrid(double X_start, double X_end, double Y_start, double Y_end,unsigned Ne_x, unsigned Ne_y, unsigned N)
+{
+    vector< vector<double> > Xlimits;
+    vector<double> XFirst(Ne_x*Ne_y,0), XLast(Ne_x*Ne_y,0) ;
+    double step = (X_end - X_start)/Ne_x;
+    unsigned i,j ;///Counter for the loop ahead.
+    for(i=0;i<Ne_y;i++)
+    {
+        XFirst[i*(Ne_x)] = X_start;
+        XLast[i*(Ne_x)]  = X_start + step; 
+        for(j=1;j<Ne_x;j++)
+        {
+            XFirst[i*(Ne_x) + j] = XFirst[i*(Ne_x) + j-1] + step;
+             XLast[i*(Ne_x) + j] =  XLast[i*(Ne_x) + j-1] + step;
+        }
+    }
+
+    Xlimits.push_back(XFirst);
+    Xlimits.push_back(XLast);
+
+
+    return Xlimits;
+}
+
+vector< vector<double> > yLimitsGrid(double X_start, double X_end, double Y_start, double Y_end,unsigned Ne_x, unsigned Ne_y, unsigned N)
+{
+    vector< vector<double> > Ylimits;
+    vector<double> YFirst(Ne_x*Ne_y,0),  YLast(Ne_x*Ne_y,0) ;
+    double step = (Y_end - Y_start)/Ne_y;
+    unsigned i,j ;///Counter for the loop ahead.
+    for(i=0;i<Ne_y;i++)
+    {
+        for(j=0;j<Ne_x;j++)
+        {
+            YFirst[i*(Ne_x) + j] = Y_start + i*step; 
+             YLast[i*(Ne_x) + j] = Y_start + (i+1)*step;
+        }
+    }
+
+    Ylimits.push_back(YFirst);
+    Ylimits.push_back(YLast);
+
+
+    return Ylimits;
+}
+
+
