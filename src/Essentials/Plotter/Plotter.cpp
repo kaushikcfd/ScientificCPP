@@ -107,51 +107,56 @@ void plot(vector<double> LeftVector, vector< vector<double> > RightVector,string
 }
 
 
-void plot(vector<double> XVector, vector<double> YVector, vector<double> ZVector)
+void plot(vector< vector<double> > XVector, vector< vector<double> > YVector, vector< vector<double> > ZVector)
 {
 	if((XVector.size()==YVector.size())&&(YVector.size()==ZVector.size()))
 	{
-		freopen("temp.dat","w",stdout);
-		printf("# X\tY\tZ\n");
-		int CurrentElement,VectorLength=ZVector.size();
-		double zmax=ZVector[0],zmin=ZVector[0];
-		for(CurrentElement = 0; CurrentElement < VectorLength; CurrentElement++)
-		{
-			printf("%.6f\t%.6f\t%.6f\n",XVector[CurrentElement],YVector[CurrentElement],ZVector[CurrentElement]);
-			if(ZVector[CurrentElement]>zmax)
-				zmax = ZVector[CurrentElement];
-			if(ZVector[CurrentElement]<zmin)
-				zmin = ZVector[CurrentElement];
-		}
-		if(zmax>0)
-			zmax*=1.05;
-		else
-			zmax*=0.95;
-		if(zmin>0)
-			zmin*=0.95;
-		else
-			zmin*=1.05;
-		fclose(stdout);
-		freopen("temp.gnu","w",stdout);
-		printf("reset\n");
-		printf("set terminal pdf color solid interlace enhanced size 1366,768\n");
-		printf("set output \"output.pdf\"\n");
-		printf("set key right box\n");
-		printf("set grid\n");
-		printf("set zrange[%.6f:%.6f]\n",zmin,zmax);
-		printf("set ylabel 'Y'\n");
-		printf("set xlabel 'X'\n");
-		printf("set zlabel 'Z'\n");
-        printf("set isosamples 150, 150\n");
-        printf("unset surface\n");
-        printf("set pm3d implicit at s\n");
-        printf("set pm3d scansbackward\n## Last datafile plotted: \"$PALETTE\" \n");
+        unsigned m = XVector.size();///Number of rows.
+        unsigned n = XVector[0].size();///Number of columns.
+		unsigned i,j;
         
-        printf("splot 'temp.dat' using 1\n");
-		fclose(stdout);
-		freopen ("/dev/tty", "a", stdout);
-		system("gnuplot> load 'temp.gnu'");
-		//system("rm -rf temp* load");
+        freopen("X.dat","w",stdout);
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n-1;j++)
+                printf("%.3f\t",XVector[i][j]);
+            printf("%.3f\n",XVector[i][j]);
+        }
+        fclose(stdout);
+        
+        
+        freopen("Y.dat","w",stdout);
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n-1;j++)
+                printf("%.3f\t",YVector[i][j]);
+            printf("%.3f\n",YVector[i][j]);
+        }
+        fclose(stdout);
+        
+        
+        freopen("Z.dat","w",stdout);
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n-1;j++)
+                printf("%.3f\t",ZVector[i][j]);
+            printf("%.3f\n",ZVector[i][j]);
+        }
+        fclose(stdout);
+        
+        freopen("temp.m","w",stdout);
+        printf("load X.dat;\n");
+        printf("load Y.dat;\n");
+        printf("load Z.dat;\n");
+        printf("surf(X,Y,Z);\n");
+        printf("print -djpg output.jpg;\n");
+        
+        fclose(stdout);
+        
+
+        freopen ("/dev/tty", "a", stdout);
+		system("octave temp.m");
+		system("rm -rf temp* load");
 		cerr<<"Success, Plotting of Vectors done. Check the working directory file with output.jpg is created!!\n";		
 	}
 	else

@@ -3,20 +3,19 @@
 int main()
 {
     vector<double> x,y,z;
-    y = x = stepFill(-1,0.02,1);
-    display(x);
+    y = x = stepFill(-1,0.1,1);
     unsigned N = x.size();
     unsigned i,j;
-    vector<double> gridZ = zeros(N*N);
-    vector<double> gridY = zeros(N*N);
-    vector<double> gridX = zeros(N*N);
+    vector< vector<double> > gridZ = zeros(N,N);
+    vector< vector<double> > gridY = zeros(N,N);
+    vector< vector<double> > gridX = zeros(N,N);
     for(i=0;i<N;i++)
     {
         for(j=0;j<N;j++)
         {
-            gridX[i*N + j]=x[j];
-            gridY[i*N + j]=y[i];
-            gridZ[i*N + j] = pow(2.7183,-0.5*((gridX[i*N+j]*gridX[i*N+j]+gridY[i*N+j]*gridY[i*N+j])));
+            gridX[i][j]=x[j];
+            gridY[i][j]=y[i];
+            gridZ[i][j] = pow(2.7183,-0.5*((gridX[i][j]*gridX[i][j]+gridY[i][j]*gridY[i][j])));
         }
     }
     plot(gridX,gridY,gridZ);
