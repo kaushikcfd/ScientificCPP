@@ -107,5 +107,58 @@ void plot(vector<double> LeftVector, vector< vector<double> > RightVector,string
 }
 
 
+void plot(vector<double> XVector, vector<double> YVector, vector<double> ZVector)
+{
+	if((XVector.size()==YVector.size())&&(YVector.size()==ZVector.size()))
+	{
+		freopen("temp.dat","w",stdout);
+		printf("# X\tY\tZ\n");
+		int CurrentElement,VectorLength=ZVector.size();
+		double zmax=ZVector[0],zmin=ZVector[0];
+		for(CurrentElement = 0; CurrentElement < VectorLength; CurrentElement++)
+		{
+			printf("%.6f\t%.6f\t%.6f\n",XVector[CurrentElement],YVector[CurrentElement],ZVector[CurrentElement]);
+			if(ZVector[CurrentElement]>zmax)
+				zmax = ZVector[CurrentElement];
+			if(ZVector[CurrentElement]<zmin)
+				zmin = ZVector[CurrentElement];
+		}
+		if(zmax>0)
+			zmax*=1.05;
+		else
+			zmax*=0.95;
+		if(zmin>0)
+			zmin*=0.95;
+		else
+			zmin*=1.05;
+		fclose(stdout);
+		freopen("temp.gnu","w",stdout);
+		printf("reset\n");
+		printf("set terminal pdf color solid interlace enhanced size 1366,768\n");
+		printf("set output \"output.pdf\"\n");
+		printf("set key right box\n");
+		printf("set grid\n");
+		printf("set zrange[%.6f:%.6f]\n",zmin,zmax);
+		printf("set ylabel 'Y'\n");
+		printf("set xlabel 'X'\n");
+		printf("set zlabel 'Z'\n");
+        printf("set isosamples 150, 150\n");
+        printf("unset surface\n");
+        printf("set pm3d implicit at s\n");
+        printf("set pm3d scansbackward\n## Last datafile plotted: \"$PALETTE\" \n");
+        
+        printf("splot 'temp.dat' using 1\n");
+		fclose(stdout);
+		freopen ("/dev/tty", "a", stdout);
+		system("gnuplot> load 'temp.gnu'");
+		//system("rm -rf temp* load");
+		cerr<<"Success, Plotting of Vectors done. Check the working directory file with output.jpg is created!!\n";		
+	}
+	else
+		printf("ERROR: The given vectors are of different lengths, hence aborting!!\n");
+}
+
+
+
 
 /**END OF THE FILE.**/

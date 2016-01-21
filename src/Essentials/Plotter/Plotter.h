@@ -28,5 +28,7 @@ void plot(vector<double>  , vector<double>  ,string , string );
 
 void plot(vector<double>  , vector<double>  ,string , vector<string> );
 
+void plot(vector<double>  , vector<double> , vector<double> );
+
 
 /**END OF THE FILE.**/

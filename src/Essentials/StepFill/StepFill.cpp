@@ -4,18 +4,16 @@ vector<double> stepFill(double start, double stepSize, double end)
 {
 	if(((end-start)*stepSize) > 0)
 	{
-		int CurrentElement;
 		vector<double> ResultVector;
 		ResultVector.push_back(start);
-		for(CurrentElement = 0; ResultVector[CurrentElement] <= end; CurrentElement++)
+        double lastElement=start;
+		while(((lastElement+stepSize)-end) <= 1e-10)
 		{
-			if((ResultVector[CurrentElement]+stepSize)<=end)
-				ResultVector.push_back(ResultVector[CurrentElement]+stepSize);
-			else
-				break;
+			ResultVector.push_back(lastElement+stepSize);
+            lastElement+=stepSize;
 		}
 		//printf("Success, VECTOR of size %ld created with stepSize %.6f.\n",ResultVector.size(),stepSize);	
-		return ResultVector;
+        return ResultVector;
 	}
 	else
 	{

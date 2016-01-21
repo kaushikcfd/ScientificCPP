@@ -1,36 +1,26 @@
 #include "src/ScientificCPP/ScientificCPP.cpp"
 
-double f(double x)
-{
-	return sin(x);
-}
-
 int main()
 {
-	
-	//vector< vector<double> > A = derivativeDGDSS(4,4) - fluxDGDSS(4,4)*rusanovFluxDGDSS(4,4);
-/**
-    vector< vector<double> > A;
-	vector<double> b;
-	vector<string> k;
-	b = stepFill(-1,0.01,1);
-	k.push_back("cosx");
-	vector<double> c;
-	unsigned i;
-	for(i=0;i<b.size();i++)
-		c.push_back(cos(b[i]));
-	A.push_back(c);
-	c.clear();
-	for(i=0;i<b.size();i++)
-		c.push_back(sin(b[i]));
-	A.push_back(c);
-	k.push_back("sinx");
-	plot(b,A,"Try",k);
-	
-**/	
-    vector< vector<double> > adj;
-    adj = elementNeighbours(3,3); 
-    display(adj);
-    
+    vector<double> x,y,z;
+    y = x = stepFill(-1,0.02,1);
+    display(x);
+    unsigned N = x.size();
+    unsigned i,j;
+    vector<double> gridZ = zeros(N*N);
+    vector<double> gridY = zeros(N*N);
+    vector<double> gridX = zeros(N*N);
+    for(i=0;i<N;i++)
+    {
+        for(j=0;j<N;j++)
+        {
+            gridX[i*N + j]=x[j];
+            gridY[i*N + j]=y[i];
+            gridZ[i*N + j] = pow(2.7183,-0.5*((gridX[i*N+j]*gridX[i*N+j]+gridY[i*N+j]*gridY[i*N+j])));
+        }
+    }
+    plot(gridX,gridY,gridZ);
+
+
     return 0;
 }
