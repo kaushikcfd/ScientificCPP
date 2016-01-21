@@ -19,31 +19,53 @@
  * Example usage
  * @code
  * 		double integral = lobattoIntegration(unsigned n);//Storing the coefficient of the nth degree Legendre roots.
- * 	@endcode
+ * @endcode
  */
 
-vector< vector<double> > lobattoGrid(unsigned N)
+
+vector< vector<double> > xlobattoGrid(unsigned N)
 {
-    vector< vector<double> > CompGrid;
-    vector<double> CompGridX,CompGridY;///This computational grid has been formed using the lobatto Nodes and and in the space -1 to +1 cross -1 to +1.
-    vector<double> Nodes = lobattoNodes(N+1);
+    vector< vector<double> > CompGridx;///This would be used  for storing the y-coordinates of the computational grid.
     
-    unsigned M = (N+1)*(N+1);///The total number of elements in a quad element.
-    unsigned i,j;///Used as an counter for the loop ahead.
-    /**Now creating the computational grid.**/
-    CompGridX = CompGridY = zeros(M);
-    for (i=0;i<=N;i++)
+    vector<double> Nodes = lobattoNodes(N+1);///Note we need N+1 nodes bcoz N+1 nodes would interpolate a polynomial of degree N.
+
+    unsigned i,j;///These would be used as counter for the loops and hence for the purpose of traversing through the matrix.
+
+    CompGridx = zeros(N+1,N+1);
+
+    for(i=0;i<=N;i++)
     {
-          for(j=0;j<=N;j++)
-          {
-             CompGridX[i*(N+1) + j] = Nodes[j]; 
-             CompGridY[i*(N+1) + j] = Nodes[i];
-          }
+        for(j=0;j<=N;j++)
+        {
+            CompGridx[i][j] = Nodes[j];
+        }
     }
-    CompGrid.push_back(CompGridX);
-    CompGrid.push_back(CompGridY);
-    return CompGrid;
+    
+    return CompGridx;
 }
+
+
+vector< vector<double> > ylobattoGrid(unsigned N)
+{
+    vector< vector<double> > CompGridy;///This would be used  for storing the y-coordinates of the computational grid.
+    
+    vector<double> Nodes = lobattoNodes(N+1);///Note we need N+1 nodes bcoz N+1 nodes would interpolate a polynomial of degree N.
+
+    unsigned i,j;///These would be used as counter for the loops and hence for the purpose of traversing through the matrix.
+
+    CompGridy = zeros(N+1,N+1);
+
+    for(i=0;i<=N;i++)
+    {
+        for(j=0;j<=N;j++)
+        {
+            CompGridy[i][j] = Nodes[i];
+        }
+    }
+    
+    return CompGridy;
+}
+
 
 vector< vector<double> > xLimitsGrid(double X_start, double X_end, double Y_start, double Y_end,unsigned Ne_x, unsigned Ne_y, unsigned N)
 {

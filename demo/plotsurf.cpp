@@ -1,4 +1,10 @@
-#include "src/ScientificCPP/ScientificCPP.cpp"
+/**
+ * This is a demo file showing the usage of how to use the surface plot feature it generates a file as output.jpg which
+ * renders the graphics.
+ * Code is checked and verified.
+ * */
+
+#include "../src/ScientificCPP/ScientificCPP.cpp"
 
 int main()
 {

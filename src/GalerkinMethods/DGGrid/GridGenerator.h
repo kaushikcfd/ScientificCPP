@@ -10,7 +10,9 @@ using namespace std;
 #ifndef GridGeneration_H
 #define GridGeneration_H
 
-vector < vector<double> > lobattoGrid(unsigned );
+vector < vector<double> > xlobattoGrid(unsigned );
+
+vector < vector<double> > ylobattoGrid(unsigned );
 
 vector< vector<double> > gridGenerator(double , double , double , double , unsigned , unsigned );
 
