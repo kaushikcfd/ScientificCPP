@@ -14,6 +14,7 @@
 
 #include "../../Interpolation/LagrangePolynomials/LagrangePolynomials.h"
 
+#include "../../Interpolation/LobattoNodes/LobattoNodes.h"
 #include "../../Integration/LobattoIntegration/LobattoIntegration.h"
 
 #include "../../Polynomial/PolyEval/PolyEval.h"
@@ -25,5 +26,5 @@
 
 using namespace std;
 
-vector< vector<double> > massMatrix(vector<double> );
-
+vector < vector<double> > massMatrix( vector<double> );
+vector < vector<double> > twoDMassMatrix( unsigned  );///Note: Right now the support is only for quad grids, but can be very easily extended for other grid types. 
