@@ -47,6 +47,7 @@
 #include "../GalerkinMethods/DG/RusanovFluxDGDSS/RusanovFluxDGDSS.cpp"
 #include "../GalerkinMethods/DG/FluxDGDSS/FluxDGDSS.cpp"
 #include "../GalerkinMethods/DGGrid/GridGenerator.cpp"
+#include "../GalerkinMethods/AdvectionMatrix/AdvectionMatrix.cpp"
 //////////////////////////////////////////////
 #ifndef ScientificCPP_H
 #define ScientificCPP_H
