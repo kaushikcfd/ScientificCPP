@@ -13,5 +13,8 @@
 
 using namespace std;
 
-vector< vector<double> > massDGDSS(unsigned , unsigned );
+vector< vector<double> > massDGDSS(unsigned , unsigned );///This is the 1-D mass matrix which is obtained after so-called DSS.
+vector< vector<double> > massDGDSS(unsigned , unsigned , unsigned);///This would be the 2-D mass matrix, after so-called DSS.
+
+
 
