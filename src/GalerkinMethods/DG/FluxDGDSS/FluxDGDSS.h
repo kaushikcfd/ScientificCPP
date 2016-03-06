@@ -14,4 +14,7 @@
 using namespace std;
 
 vector< vector<double> > fluxDGDSS(unsigned , unsigned );
-
+vector< vector<double> > fluxDGDSS1(unsigned , unsigned , unsigned );
+vector< vector<double> > fluxDGDSS2(unsigned , unsigned , unsigned );
+vector< vector<double> > fluxDGDSS3(unsigned , unsigned , unsigned );
+vector< vector<double> > fluxDGDSS4(unsigned , unsigned , unsigned );

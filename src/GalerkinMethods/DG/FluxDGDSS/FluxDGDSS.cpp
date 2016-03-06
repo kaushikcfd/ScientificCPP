@@ -47,7 +47,7 @@ vector< vector<double> > fluxDGDSS(unsigned Ne, unsigned N)
 }
 
 
-vector< vector<double> > fluxDGDSS(unsigned Nex, unsigned Ney, unsigned N)
+vector< vector<double> > fluxDGDSS1(unsigned Nex, unsigned Ney, unsigned N)
 {
 	vector< vector<double> > F;///This would be the total summed up mass matrix.
 	vector< vector<double> > f;///This would denote the temporary mass matrix involved in each element.
@@ -56,6 +56,73 @@ vector< vector<double> > fluxDGDSS(unsigned Nex, unsigned Ney, unsigned N)
 	unsigned j,k,l=0;///Denotes which of the node is going to be affected
 	F = zeros(Np,Np);
 	f = twoDFluxMatrix1(N);
+	for(i=0;i<Ney;i++)
+	{
+		for(j=0;j<Nex;j++)
+		{
+			for(k=0;k<((N+1)*(N+1));k++)
+                for(l=0;l<((N+1)*(N+1));l++)
+				    F[(j+i*Nex)*(N+1)*(N+1)+k][(j+i*Nex)*(N+1)*(N+1)+l] = f[k][l];
+		}
+	}
+
+	return F;
+}
+
+vector< vector<double> > fluxDGDSS2(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > F;///This would be the total summed up mass matrix.
+	vector< vector<double> > f;///This would denote the temporary mass matrix involved in each element.
+	unsigned Np= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k,l=0;///Denotes which of the node is going to be affected
+	F = zeros(Np,Np);
+	f = twoDFluxMatrix2(N);
+	for(i=0;i<Ney;i++)
+	{
+		for(j=0;j<Nex;j++)
+		{
+			for(k=0;k<((N+1)*(N+1));k++)
+                for(l=0;l<((N+1)*(N+1));l++)
+				    F[(j+i*Nex)*(N+1)*(N+1)+k][(j+i*Nex)*(N+1)*(N+1)+l] = f[k][l];
+		}
+	}
+
+	return F;
+}
+
+vector< vector<double> > fluxDGDSS3(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > F;///This would be the total summed up mass matrix.
+	vector< vector<double> > f;///This would denote the temporary mass matrix involved in each element.
+	unsigned Np= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k,l=0;///Denotes which of the node is going to be affected
+	F = zeros(Np,Np);
+	f = twoDFluxMatrix3(N);
+	for(i=0;i<Ney;i++)
+	{
+		for(j=0;j<Nex;j++)
+		{
+			for(k=0;k<((N+1)*(N+1));k++)
+                for(l=0;l<((N+1)*(N+1));l++)
+				    F[(j+i*Nex)*(N+1)*(N+1)+k][(j+i*Nex)*(N+1)*(N+1)+l] = f[k][l];
+		}
+	}
+
+	return F;
+}
+
+
+vector< vector<double> > fluxDGDSS4(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > F;///This would be the total summed up mass matrix.
+	vector< vector<double> > f;///This would denote the temporary mass matrix involved in each element.
+	unsigned Np= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k,l=0;///Denotes which of the node is going to be affected
+	F = zeros(Np,Np);
+	f = twoDFluxMatrix4(N);
 	for(i=0;i<Ney;i++)
 	{
 		for(j=0;j<Nex;j++)
