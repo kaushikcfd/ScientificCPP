@@ -19,6 +19,8 @@
 #include "../../Polynomial/PolyEval/PolyEval.h"
 #include "../../Polynomial/PolyDerivative/PolyDerivative.h"
 
+#include "../MassMatrix/MassMatrix.h"
+
 #ifndef DerivativeMatrix_H
 #define DerivativeMatrix_H
 #endif
@@ -26,4 +28,5 @@
 using namespace std;
 
 vector< vector<double> > derivativeMatrix(vector<double> );
-
+vector< vector<double> > twoDDerivativeMatrixX(unsigned );
+vector< vector<double> > twoDDerivativeMatrixY(unsigned );
