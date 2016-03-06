@@ -17,4 +17,5 @@
 using namespace std;
 
 vector< vector<double> > derivativeDGDSS(unsigned , unsigned );
-
+vector< vector<double> > derivativeDGDSSX(unsigned , unsigned , unsigned );
+vector< vector<double> > derivativeDGDSSY(unsigned , unsigned , unsigned );
