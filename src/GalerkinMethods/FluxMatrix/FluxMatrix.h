@@ -18,6 +18,7 @@
 
 #include "../../Polynomial/PolyEval/PolyEval.h"
 #include "../../Polynomial/PolyDerivative/PolyDerivative.h"
+#include "../MassMatrix/MassMatrix.h"
 
 #ifndef FluxMatrix_H
 #define FluxMatrix_H
@@ -26,4 +27,7 @@
 using namespace std;
 
 vector< vector<double> > fluxMatrix(vector<double> );
-
+vector< vector<double> > twoDFluxMatrix1(unsigned );
+vector< vector<double> > twoDFluxMatrix2(unsigned );
+vector< vector<double> > twoDFluxMatrix3(unsigned );
+vector< vector<double> > twoDFluxMatrix4(unsigned );

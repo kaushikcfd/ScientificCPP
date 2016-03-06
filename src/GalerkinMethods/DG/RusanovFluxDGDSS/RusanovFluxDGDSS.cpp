@@ -25,14 +25,14 @@
  * 	@endcode
  */
 
-vector< vector<double> > rusanovFluxDGDSS(unsigned Ne, unsigned N) 
+vector< vector<double> > rusanovFluxDGDSS(unsigned Ne, unsigned N)
 {
 
 	vector< vector<double> > f;///This would denote the temporary mass matrix involved in each element.
 
 	unsigned Np= Ne*N + Ne;///This would denote the number of gridpoints present.
 	unsigned i;///Counter for the loop.
-	unsigned j,k;///Denotes which of the node is going to be affected 
+	unsigned j,k;///Denotes which of the node is going to be affected
 	f = zeros(Np,Np);
 
 	f[0][Np-1]=1;
@@ -44,6 +44,87 @@ vector< vector<double> > rusanovFluxDGDSS(unsigned Ne, unsigned N)
 		f[j][j-1] = 1;
 		f[k][k]   = 1;
 	}
+
+	return f;
+}
+
+
+vector< vector<double> > rusanovFluxDGDSS1(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > f;///This would be the total summed up mass matrix.
+	unsigned Np= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k;///Denotes which of the node is going to be affected
+	f = zeros(Np,Np);
+
+	for(i=1;i<Ney;i++)
+		for(j=0;j<Nex;j++)
+			for(k=0;k<(N+1);k++)
+                f[(j+i*Nex)*(N+1)*(N+1)+k][(j+(i-1)*Nex)*(N+1)*(N+1)+N*(N+1)+k] = 1;
+
+
+	i	=	0;
+
+	for(j=0;j<Nex;j++)
+		for(k=0;k<(N+1);k++)
+			f[(j+i*Nex)*(N+1)*(N+1)+k][(j+(Ney-1)*Nex)*(N+1)*(N+1)+N*(N+1)+k] = 1;
+
+	return f;
+}
+
+vector< vector<double> > rusanovFluxDGDSS2(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > f;///This would be the total summed up mass matrix.
+	unsigned Np	= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k;///Denotes which of the node is going to be affected
+	f = zeros(Np,Np);
+
+	for(i=0;i<Ney;i++)
+		for(j=0;j<Nex;j++)
+			for(k=0;k<(N+1);k++)
+                f[(j+i*Nex)*(N+1)*(N+1)+k*(N+1)+N][(j+i*Nex)*(N+1)*(N+1)+k*(N+1)+N] = 1;
+
+
+	return f;
+}
+
+vector< vector<double> > rusanovFluxDGDSS3(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > f;///This would be the total summed up mass matrix.
+	unsigned Np= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k;///Denotes which of the node is going to be affected
+	f = zeros(Np,Np);
+
+	for(i=0;i<Ney;i++)
+		for(j=0;j<Nex;j++)
+			for(k=0;k<(N+1);k++)
+                f[(j+i*Nex)*(N+1)*(N+1)+N*(N+1)+k][(j+i*Nex)*(N+1)*(N+1)+N*(N+1)+k] = 1;
+
+
+	return f;
+}
+
+vector< vector<double> > rusanovFluxDGDSS4(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > f;///This would be the total summed up mass matrix.
+	unsigned Np	= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k;///Denotes which of the node is going to be affected
+	f = zeros(Np,Np);
+
+	for(i=0;i<Ney;i++)
+		for(j=1;j<Nex;j++)
+			for(k=0;k<(N+1);k++)
+                f[(j+i*Nex)*(N+1)*(N+1)+k*(N+1)][(j-1+i*Nex)*(N+1)*(N+1)+k*(N+1)+N] = 1;
+
+	j	=	0;
+
+	for(i=0;i<Ney;i++)
+		for(k=0;k<(N+1);k++)
+            f[(j+i*Nex)*(N+1)*(N+1)+k*(N+1)][(Nex-1+i*Nex)*(N+1)*(N+1)+k*(N+1)+N] = 1;
+
 
 	return f;
 }

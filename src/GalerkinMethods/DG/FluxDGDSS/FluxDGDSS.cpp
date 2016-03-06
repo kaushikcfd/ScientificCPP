@@ -29,7 +29,7 @@ vector< vector<double> > fluxDGDSS(unsigned Ne, unsigned N)
 	vector<double> points;		///This would denote the temporary points in each of the element.
 	unsigned Np= Ne*N + Ne;		///This would denote the number of gridpoints present.
 	unsigned i;					///Counter for the loop.
-	unsigned j,k,l=0;			///Denotes which of the node is going to be affected 
+	unsigned j,k,l=0;			///Denotes which of the node is going to be affected
 	F = zeros(Np,Np);
 	points  = lobattoNodes(N+1);///N+1 because Using N+1 nodes we can construct N degree polynomial.
 	f = fluxMatrix(points);
@@ -41,6 +41,29 @@ vector< vector<double> > fluxDGDSS(unsigned Ne, unsigned N)
 				F[j+i*N+l][k+i*N+l] = F[j + i*N+l][k+i*N+l] + f[j][k];
 		}
 		l++;
+	}
+
+	return F;
+}
+
+
+vector< vector<double> > fluxDGDSS(unsigned Nex, unsigned Ney, unsigned N)
+{
+	vector< vector<double> > F;///This would be the total summed up mass matrix.
+	vector< vector<double> > f;///This would denote the temporary mass matrix involved in each element.
+	unsigned Np= (N+1)*(N+1)*Nex*Ney;///This would denote the number of gridpoints present.
+	unsigned i;///Counter for the loop.
+	unsigned j,k,l=0;///Denotes which of the node is going to be affected
+	F = zeros(Np,Np);
+	f = twoDFluxMatrix1(N);
+	for(i=0;i<Ney;i++)
+	{
+		for(j=0;j<Nex;j++)
+		{
+			for(k=0;k<((N+1)*(N+1));k++)
+                for(l=0;l<((N+1)*(N+1));l++)
+				    F[(j+i*Nex)*(N+1)*(N+1)+k][(j+i*Nex)*(N+1)*(N+1)+l] = f[k][l];
+		}
 	}
 
 	return F;
