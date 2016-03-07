@@ -11,6 +11,7 @@
 #include "../../Essentials/Zero/Zero.h"
 
 #include "../../MatrixOperations/GaussElimination/GaussElimination.h"
+#include "../../MatrixOperations/Transpose/transpose.h"
 
 #include "../../Interpolation/LagrangePolynomials/LagrangePolynomials.h"
 
@@ -28,3 +29,5 @@ using namespace std;
 vector<double> CGToDG(vector<double> , unsigned , unsigned );
 
 vector<double> DGToCG(vector<double> , unsigned , unsigned );
+
+vector< vector<double> > DGToCG(vector< vector<double> > , unsigned , unsigned , unsigned );

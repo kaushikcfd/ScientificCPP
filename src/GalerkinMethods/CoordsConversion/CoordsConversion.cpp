@@ -83,7 +83,7 @@ vector<double> DGToCG(vector<double> DG, unsigned Ne, unsigned N)
 		printf("ERROR: The vector given for conversion is not of suitable size.\n");
 		return DG;
 	}
-	
+
 	for(i=0;i<Np-1;i++)
 	{
 		if((i%(N+1)) == N )
@@ -97,6 +97,31 @@ vector<double> DGToCG(vector<double> DG, unsigned Ne, unsigned N)
 		}
 	}
 	CG.push_back(DG[i]);
+
+	return CG;
+}
+
+vector< vector<double> > DGToCG(vector< vector<double> > DG, unsigned Nex, unsigned Ney, unsigned N)
+{
+	unsigned i;///Counter for the loop.
+
+	vector< vector<double> > CG	=	DG;
+
+	/*First converting the vectors in the x-direction.*/
+
+	for(i=0;i<((N+1)*Ney);i++)
+	{
+		CG[i]	=	DGToCG(CG[i],Nex,N);
+	}
+
+	CG 	=	transpose(CG);
+
+	for(i=0;i<(N*Nex + 1);i++)
+	{
+		CG[i]	=	DGToCG(CG[i],Ney,N);
+	}
+
+	CG 	=	transpose(CG);
 
 	return CG;
 }
